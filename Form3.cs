@@ -29,5 +29,10 @@ namespace Otel_Takip_Sistemi
             //adapter.Fill(dt);
             //dataGridView1.DataSource = dt;
         }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
