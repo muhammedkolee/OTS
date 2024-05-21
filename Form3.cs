@@ -21,13 +21,13 @@ namespace Otel_Takip_Sistemi
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            SqlConnection baglanti = new SqlConnection(conString);
-            baglanti.Open();
+            //SqlConnection baglanti = new SqlConnection(conString);
+            //baglanti.Open();
 
-            SqlDataAdapter adapter = new SqlDataAdapter("select * from Informations", baglanti);
-            DataTable dt = new DataTable();
-            adapter.Fill(dt);
-            dataGridView1.DataSource = dt;
+            //SqlDataAdapter adapter = new SqlDataAdapter("select * from Informations", baglanti);
+            //DataTable dt = new DataTable();
+            //adapter.Fill(dt);
+            //dataGridView1.DataSource = dt;
         }
     }
 }
