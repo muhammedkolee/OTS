@@ -29,139 +29,44 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            tc = new Label();
-            name = new Label();
-            surname = new Label();
-            number = new Label();
-            nickname = new Label();
-            password = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
             save = new Button();
+            password = new TextBox();
+            nickname = new TextBox();
+            number = new TextBox();
+            surname = new TextBox();
+            name = new TextBox();
+            tcno = new TextBox();
+            passwordLabel = new Label();
+            nicknameLabel = new Label();
+            numberLabel = new Label();
+            surnameLabel = new Label();
+            nameLabel = new Label();
+            tcLabel = new Label();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
+            groupBox1.Anchor = AnchorStyles.None;
             groupBox1.Controls.Add(save);
-            groupBox1.Controls.Add(textBox6);
-            groupBox1.Controls.Add(textBox5);
-            groupBox1.Controls.Add(textBox4);
-            groupBox1.Controls.Add(textBox3);
-            groupBox1.Controls.Add(textBox2);
-            groupBox1.Controls.Add(textBox1);
             groupBox1.Controls.Add(password);
             groupBox1.Controls.Add(nickname);
             groupBox1.Controls.Add(number);
             groupBox1.Controls.Add(surname);
             groupBox1.Controls.Add(name);
-            groupBox1.Controls.Add(tc);
+            groupBox1.Controls.Add(tcno);
+            groupBox1.Controls.Add(passwordLabel);
+            groupBox1.Controls.Add(nicknameLabel);
+            groupBox1.Controls.Add(numberLabel);
+            groupBox1.Controls.Add(surnameLabel);
+            groupBox1.Controls.Add(nameLabel);
+            groupBox1.Controls.Add(tcLabel);
             groupBox1.Location = new Point(183, 100);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(392, 291);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Kayıt Ol";
-            // 
-            // tc
-            // 
-            tc.AutoSize = true;
-            tc.Location = new Point(68, 50);
-            tc.Name = "tc";
-            tc.Size = new Size(55, 20);
-            tc.TabIndex = 0;
-            tc.Text = "TC No.:";
-            // 
-            // name
-            // 
-            name.AutoSize = true;
-            name.Location = new Point(92, 80);
-            name.Name = "name";
-            name.Size = new Size(31, 20);
-            name.TabIndex = 1;
-            name.Text = "Ad:";
-            // 
-            // surname
-            // 
-            surname.AutoSize = true;
-            surname.Location = new Point(73, 110);
-            surname.Name = "surname";
-            surname.Size = new Size(53, 20);
-            surname.TabIndex = 2;
-            surname.Text = "Soyad:";
-            // 
-            // number
-            // 
-            number.AutoSize = true;
-            number.Location = new Point(38, 139);
-            number.Name = "number";
-            number.Size = new Size(88, 20);
-            number.TabIndex = 3;
-            number.Text = "Telefon No.:";
-            // 
-            // nickname
-            // 
-            nickname.AutoSize = true;
-            nickname.Location = new Point(31, 171);
-            nickname.Name = "nickname";
-            nickname.Size = new Size(95, 20);
-            nickname.TabIndex = 4;
-            nickname.Text = "Kullanıcı Adı:";
-            // 
-            // password
-            // 
-            password.AutoSize = true;
-            password.Location = new Point(81, 201);
-            password.Name = "password";
-            password.Size = new Size(42, 20);
-            password.TabIndex = 5;
-            password.Text = "Şifre:";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(129, 47);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(232, 27);
-            textBox1.TabIndex = 6;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(129, 77);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(232, 27);
-            textBox2.TabIndex = 7;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(129, 107);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(232, 27);
-            textBox3.TabIndex = 8;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(129, 135);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(232, 27);
-            textBox4.TabIndex = 9;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(129, 168);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(232, 27);
-            textBox5.TabIndex = 10;
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(129, 198);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(232, 27);
-            textBox6.TabIndex = 11;
             // 
             // save
             // 
@@ -173,6 +78,109 @@
             save.UseVisualStyleBackColor = true;
             save.Click += save_Click;
             // 
+            // password
+            // 
+            password.Location = new Point(129, 198);
+            password.MaxLength = 15;
+            password.Name = "password";
+            password.Size = new Size(232, 27);
+            password.TabIndex = 11;
+            // 
+            // nickname
+            // 
+            nickname.Location = new Point(129, 168);
+            nickname.Name = "nickname";
+            nickname.Size = new Size(232, 27);
+            nickname.TabIndex = 10;
+            // 
+            // number
+            // 
+            number.Location = new Point(129, 135);
+            number.MaxLength = 11;
+            number.Name = "number";
+            number.ReadOnly = true;
+            number.Size = new Size(232, 27);
+            number.TabIndex = 9;
+            number.Text = "0";
+            number.KeyPress += number_KeyPress;
+            // 
+            // surname
+            // 
+            surname.Location = new Point(129, 107);
+            surname.Name = "surname";
+            surname.Size = new Size(232, 27);
+            surname.TabIndex = 8;
+            // 
+            // name
+            // 
+            name.Location = new Point(129, 77);
+            name.Name = "name";
+            name.Size = new Size(232, 27);
+            name.TabIndex = 7;
+            // 
+            // tcno
+            // 
+            tcno.Location = new Point(129, 47);
+            tcno.MaxLength = 11;
+            tcno.Name = "tcno";
+            tcno.Size = new Size(232, 27);
+            tcno.TabIndex = 6;
+            tcno.KeyPress += tcno_KeyPress;
+            // 
+            // passwordLabel
+            // 
+            passwordLabel.AutoSize = true;
+            passwordLabel.Location = new Point(81, 201);
+            passwordLabel.Name = "passwordLabel";
+            passwordLabel.Size = new Size(42, 20);
+            passwordLabel.TabIndex = 5;
+            passwordLabel.Text = "Şifre:";
+            // 
+            // nicknameLabel
+            // 
+            nicknameLabel.AutoSize = true;
+            nicknameLabel.Location = new Point(31, 171);
+            nicknameLabel.Name = "nicknameLabel";
+            nicknameLabel.Size = new Size(95, 20);
+            nicknameLabel.TabIndex = 4;
+            nicknameLabel.Text = "Kullanıcı Adı:";
+            // 
+            // numberLabel
+            // 
+            numberLabel.AutoSize = true;
+            numberLabel.Location = new Point(38, 139);
+            numberLabel.Name = "numberLabel";
+            numberLabel.Size = new Size(88, 20);
+            numberLabel.TabIndex = 3;
+            numberLabel.Text = "Telefon No.:";
+            // 
+            // surnameLabel
+            // 
+            surnameLabel.AutoSize = true;
+            surnameLabel.Location = new Point(73, 110);
+            surnameLabel.Name = "surnameLabel";
+            surnameLabel.Size = new Size(53, 20);
+            surnameLabel.TabIndex = 2;
+            surnameLabel.Text = "Soyad:";
+            // 
+            // nameLabel
+            // 
+            nameLabel.AutoSize = true;
+            nameLabel.Location = new Point(92, 80);
+            nameLabel.Name = "nameLabel";
+            nameLabel.Size = new Size(31, 20);
+            nameLabel.TabIndex = 1;
+            nameLabel.Text = "Ad:";
+            // 
+            // tcLabel
+            // 
+            tcLabel.AutoSize = true;
+            tcLabel.Location = new Point(68, 50);
+            tcLabel.Name = "tcLabel";
+            tcLabel.Size = new Size(55, 20);
+            tcLabel.TabIndex = 0;
+            tcLabel.Text = "TC No.:";
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -181,6 +189,7 @@
             Controls.Add(groupBox1);
             Name = "Form2";
             Text = "Form2";
+            WindowState = FormWindowState.Maximized;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
@@ -189,18 +198,18 @@
         #endregion
 
         private GroupBox groupBox1;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private Label password;
-        private Label nickname;
-        private Label number;
-        private Label surname;
-        private Label name;
-        private Label tc;
+        private TextBox number;
+        private TextBox surname;
+        private TextBox name;
+        private TextBox tcno;
+        private Label passwordLabel;
+        private Label nicknameLabel;
+        private Label numberLabel;
+        private Label surnameLabel;
+        private Label nameLabel;
+        private Label tcLabel;
         private Button save;
-        private TextBox textBox6;
-        private TextBox textBox5;
+        private TextBox password;
+        private TextBox nickname;
     }
 }
