@@ -62,6 +62,7 @@
             enter.TabIndex = 6;
             enter.Text = "Giriş Yap";
             enter.UseVisualStyleBackColor = true;
+            enter.Click += enter_Click;
             // 
             // textBox2
             // 

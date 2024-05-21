@@ -50,20 +50,20 @@
             groupBox1.Anchor = AnchorStyles.None;
             groupBox1.Controls.Add(save);
             groupBox1.Controls.Add(password);
-            groupBox1.Controls.Add(nickname);
-            groupBox1.Controls.Add(number);
-            groupBox1.Controls.Add(surname);
-            groupBox1.Controls.Add(name);
-            groupBox1.Controls.Add(tcno);
+            groupBox1.Controls.Add(tcLabel);
+            groupBox1.Controls.Add(numberLabel);
             groupBox1.Controls.Add(passwordLabel);
             groupBox1.Controls.Add(nicknameLabel);
-            groupBox1.Controls.Add(numberLabel);
+            groupBox1.Controls.Add(tcno);
+            groupBox1.Controls.Add(name);
             groupBox1.Controls.Add(surnameLabel);
             groupBox1.Controls.Add(nameLabel);
-            groupBox1.Controls.Add(tcLabel);
+            groupBox1.Controls.Add(nickname);
+            groupBox1.Controls.Add(surname);
+            groupBox1.Controls.Add(number);
             groupBox1.Location = new Point(183, 100);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(392, 291);
+            groupBox1.Size = new Size(392, 296);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Kayıt Ol";
@@ -80,7 +80,7 @@
             // 
             // password
             // 
-            password.Location = new Point(129, 198);
+            password.Location = new Point(129, 199);
             password.MaxLength = 15;
             password.Name = "password";
             password.Size = new Size(232, 27);
@@ -88,17 +88,16 @@
             // 
             // nickname
             // 
-            nickname.Location = new Point(129, 168);
+            nickname.Location = new Point(129, 166);
             nickname.Name = "nickname";
             nickname.Size = new Size(232, 27);
             nickname.TabIndex = 10;
             // 
             // number
             // 
-            number.Location = new Point(129, 135);
+            number.Location = new Point(129, 133);
             number.MaxLength = 11;
             number.Name = "number";
-            number.ReadOnly = true;
             number.Size = new Size(232, 27);
             number.TabIndex = 9;
             number.Text = "0";
@@ -106,21 +105,21 @@
             // 
             // surname
             // 
-            surname.Location = new Point(129, 107);
+            surname.Location = new Point(129, 100);
             surname.Name = "surname";
             surname.Size = new Size(232, 27);
             surname.TabIndex = 8;
             // 
             // name
             // 
-            name.Location = new Point(129, 77);
+            name.Location = new Point(129, 67);
             name.Name = "name";
             name.Size = new Size(232, 27);
             name.TabIndex = 7;
             // 
             // tcno
             // 
-            tcno.Location = new Point(129, 47);
+            tcno.Location = new Point(129, 34);
             tcno.MaxLength = 11;
             tcno.Name = "tcno";
             tcno.Size = new Size(232, 27);
@@ -130,7 +129,7 @@
             // passwordLabel
             // 
             passwordLabel.AutoSize = true;
-            passwordLabel.Location = new Point(81, 201);
+            passwordLabel.Location = new Point(81, 202);
             passwordLabel.Name = "passwordLabel";
             passwordLabel.Size = new Size(42, 20);
             passwordLabel.TabIndex = 5;
@@ -139,7 +138,7 @@
             // nicknameLabel
             // 
             nicknameLabel.AutoSize = true;
-            nicknameLabel.Location = new Point(31, 171);
+            nicknameLabel.Location = new Point(28, 169);
             nicknameLabel.Name = "nicknameLabel";
             nicknameLabel.Size = new Size(95, 20);
             nicknameLabel.TabIndex = 4;
@@ -148,7 +147,7 @@
             // numberLabel
             // 
             numberLabel.AutoSize = true;
-            numberLabel.Location = new Point(38, 139);
+            numberLabel.Location = new Point(35, 136);
             numberLabel.Name = "numberLabel";
             numberLabel.Size = new Size(88, 20);
             numberLabel.TabIndex = 3;
@@ -157,7 +156,7 @@
             // surnameLabel
             // 
             surnameLabel.AutoSize = true;
-            surnameLabel.Location = new Point(73, 110);
+            surnameLabel.Location = new Point(70, 103);
             surnameLabel.Name = "surnameLabel";
             surnameLabel.Size = new Size(53, 20);
             surnameLabel.TabIndex = 2;
@@ -166,7 +165,7 @@
             // nameLabel
             // 
             nameLabel.AutoSize = true;
-            nameLabel.Location = new Point(92, 80);
+            nameLabel.Location = new Point(92, 70);
             nameLabel.Name = "nameLabel";
             nameLabel.Size = new Size(31, 20);
             nameLabel.TabIndex = 1;
@@ -175,7 +174,7 @@
             // tcLabel
             // 
             tcLabel.AutoSize = true;
-            tcLabel.Location = new Point(68, 50);
+            tcLabel.Location = new Point(68, 37);
             tcLabel.Name = "tcLabel";
             tcLabel.Size = new Size(55, 20);
             tcLabel.TabIndex = 0;

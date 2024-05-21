@@ -26,17 +26,15 @@ namespace Otel_Takip_Sistemi
             baglanti.Open();
             if (baglanti.State == System.Data.ConnectionState.Open)
             {
-                SqlCommand komut1 = new SqlCommand("insert into Informations(TcNo, Ad, Soyad, Telefon) values(@TcNo, @Ad, @Soyad, @Telefon)", baglanti);
-                komut1.Parameters.AddWithValue("@TcNo", tcno.Text);
-                komut1.Parameters.AddWithValue("@Ad", name.Text);
-                komut1.Parameters.AddWithValue("@Soyad", surname.Text);
-                komut1.Parameters.AddWithValue("@Telefon", number.Text);
-                komut1.ExecuteNonQuery();
+                SqlCommand komut = new SqlCommand("insert into Personel(Tc, Ad, Soyad, Telefon, Kullanıcı_Adı, Şifre) values(@TcNo, @Ad, @Soyad, @Telefon, @nick, @pass)", baglanti);
+                komut.Parameters.AddWithValue("@TcNo", tcno.Text);
+                komut.Parameters.AddWithValue("@Ad", name.Text);
+                komut.Parameters.AddWithValue("@Soyad", surname.Text);
+                komut.Parameters.AddWithValue("@Telefon", number.Text);
+                komut.Parameters.AddWithValue("@nick", nickname.Text);
+                komut.Parameters.AddWithValue("@pass", password.Text);
+                komut.ExecuteNonQuery();
 
-                SqlCommand komut2 = new SqlCommand("insert into Info(Kullanıcı_Adı, Şifre) values(@nick, @password)", baglanti);
-                komut2.Parameters.AddWithValue("@nick", nickname.Text);
-                komut2.Parameters.AddWithValue("@password", password.Text);
-                komut2.ExecuteNonQuery();
             }
 
             Form1 anaForm = new Form1();
