@@ -29,24 +29,23 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            odaNo = new TextBox();
-            grup = new TextBox();
-            girisTarih = new TextBox();
-            cikisTarih = new TextBox();
+            comboBox1 = new ComboBox();
             fiyat = new TextBox();
-            textBox1 = new TextBox();
-            dateTimePicker1 = new DateTimePicker();
+            cikisTarih = new TextBox();
+            girisTarih = new TextBox();
+            grup = new TextBox();
+            odaNo = new TextBox();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(comboBox1);
             groupBox1.Controls.Add(fiyat);
             groupBox1.Controls.Add(cikisTarih);
             groupBox1.Controls.Add(girisTarih);
@@ -64,45 +63,50 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Rezervasyon Bilgileri";
             // 
-            // label1
+            // comboBox1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F);
-            label1.Location = new Point(6, 32);
-            label1.Name = "label1";
-            label1.Size = new Size(85, 28);
-            label1.TabIndex = 0;
-            label1.Text = "Oda No.";
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "$", "€", "₺" });
+            comboBox1.Location = new Point(293, 226);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(57, 28);
+            comboBox1.TabIndex = 2;
             // 
-            // label2
+            // fiyat
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F);
-            label2.Location = new Point(6, 77);
-            label2.Name = "label2";
-            label2.Size = new Size(56, 28);
-            label2.TabIndex = 1;
-            label2.Text = "Grup";
+            fiyat.Location = new Point(162, 225);
+            fiyat.Name = "fiyat";
+            fiyat.Size = new Size(125, 27);
+            fiyat.TabIndex = 9;
             // 
-            // label3
+            // cikisTarih
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F);
-            label3.Location = new Point(6, 124);
-            label3.Name = "label3";
-            label3.Size = new Size(102, 28);
-            label3.TabIndex = 2;
-            label3.Text = "Giriş Tarihi";
+            cikisTarih.Location = new Point(162, 175);
+            cikisTarih.Name = "cikisTarih";
+            cikisTarih.Size = new Size(125, 27);
+            cikisTarih.TabIndex = 8;
             // 
-            // label4
+            // girisTarih
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 12F);
-            label4.Location = new Point(6, 171);
-            label4.Name = "label4";
-            label4.Size = new Size(103, 28);
-            label4.TabIndex = 3;
-            label4.Text = "Çıkış Tarihi";
+            girisTarih.Location = new Point(162, 128);
+            girisTarih.Name = "girisTarih";
+            girisTarih.Size = new Size(125, 27);
+            girisTarih.TabIndex = 7;
+            // 
+            // grup
+            // 
+            grup.Location = new Point(162, 81);
+            grup.Name = "grup";
+            grup.Size = new Size(125, 27);
+            grup.TabIndex = 6;
+            // 
+            // odaNo
+            // 
+            odaNo.Location = new Point(162, 33);
+            odaNo.Name = "odaNo";
+            odaNo.Size = new Size(125, 27);
+            odaNo.TabIndex = 5;
             // 
             // label5
             // 
@@ -114,65 +118,55 @@
             label5.TabIndex = 4;
             label5.Text = "Fiyat";
             // 
-            // odaNo
+            // label4
             // 
-            odaNo.Location = new Point(162, 33);
-            odaNo.Name = "odaNo";
-            odaNo.Size = new Size(125, 27);
-            odaNo.TabIndex = 5;
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 12F);
+            label4.Location = new Point(6, 171);
+            label4.Name = "label4";
+            label4.Size = new Size(103, 28);
+            label4.TabIndex = 3;
+            label4.Text = "Çıkış Tarihi";
             // 
-            // grup
+            // label3
             // 
-            grup.Location = new Point(162, 81);
-            grup.Name = "grup";
-            grup.Size = new Size(125, 27);
-            grup.TabIndex = 6;
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 12F);
+            label3.Location = new Point(6, 124);
+            label3.Name = "label3";
+            label3.Size = new Size(102, 28);
+            label3.TabIndex = 2;
+            label3.Text = "Giriş Tarihi";
             // 
-            // girisTarih
+            // label2
             // 
-            girisTarih.Location = new Point(162, 128);
-            girisTarih.Name = "girisTarih";
-            girisTarih.Size = new Size(125, 27);
-            girisTarih.TabIndex = 7;
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F);
+            label2.Location = new Point(6, 77);
+            label2.Name = "label2";
+            label2.Size = new Size(56, 28);
+            label2.TabIndex = 1;
+            label2.Text = "Grup";
             // 
-            // cikisTarih
+            // label1
             // 
-            cikisTarih.Location = new Point(162, 175);
-            cikisTarih.Name = "cikisTarih";
-            cikisTarih.Size = new Size(125, 27);
-            cikisTarih.TabIndex = 8;
-            // 
-            // fiyat
-            // 
-            fiyat.Location = new Point(162, 225);
-            fiyat.Name = "fiyat";
-            fiyat.Size = new Size(125, 27);
-            fiyat.TabIndex = 9;
-            // 
-            // textBox1
-            // 
-            textBox1.AutoCompleteCustomSource.AddRange(new string[] { "$", "t", "g", "h" });
-            textBox1.Location = new Point(293, 225);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(34, 27);
-            textBox1.TabIndex = 10;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(566, 236);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(270, 27);
-            dateTimePicker1.TabIndex = 1;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F);
+            label1.Location = new Point(6, 32);
+            label1.Name = "label1";
+            label1.Size = new Size(85, 28);
+            label1.TabIndex = 0;
+            label1.Text = "Oda No.";
             // 
             // Form5
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1694, 705);
-            Controls.Add(dateTimePicker1);
             Controls.Add(groupBox1);
             Name = "Form5";
             Text = "Form5";
+            Load += Form5_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
@@ -193,5 +187,6 @@
         private Label label3;
         private Label label2;
         private DateTimePicker dateTimePicker1;
+        private ComboBox comboBox1;
     }
 }

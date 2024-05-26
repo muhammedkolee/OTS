@@ -14,7 +14,7 @@ namespace Otel_Takip_Sistemi
 {
     public partial class Kayit : Form
     {
-        public string conString = "Data Source=MUHAMMED\\SQLEXPRESS;Initial Catalog=Giris;Integrated Security=True;Trust Server Certificate=True";
+        public string conString = "Data Source=DENIZ\\SQLEXPRESS;Initial Catalog=Giris;Integrated Security=True;Trust Server Certificate=True";
         public Kayit()
         {
             InitializeComponent();

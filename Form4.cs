@@ -14,7 +14,8 @@ namespace Otel_Takip_Sistemi
 {
     public partial class Odalar : Form
     {
-        public string conString = "Data Source=MUHAMMED\\SQLEXPRESS;Initial Catalog=Giris;Integrated Security=True;Trust Server Certificate=True";
+        public string conString = "Data Source=DENIZ\\SQLEXPRESS;Initial Catalog=Giris;Integrated Security=True;Trust Server Certificate=True";
+        public static string oda;
 
         string sorguToplamOda = "select count(*) from Odalar";
         string sorguBosOda = "select count(*) from Odalar where Durum = 0";
@@ -42,21 +43,21 @@ namespace Otel_Takip_Sistemi
                 bosOda.Text = Convert.ToString(komutBosOda.ExecuteScalar());
             }
 
-            using (SqlCommand komutDoluOda = new SqlCommand(sorguDoluOda, baglanti))
-            {
-                doluOda.Text = Convert.ToString(komutDoluOda.ExecuteScalar());
-            }
-            int toplam;
-            using (SqlCommand komutKisiSayisi = new SqlCommand(sorguYetiskin, baglanti))
-            {
-                toplam = Convert.ToInt32(Convert.ToString(komutKisiSayisi.ExecuteScalar()));
-            }
+            //using (SqlCommand komutDoluOda = new SqlCommand(sorguDoluOda, baglanti))
+            //{
+            //    doluOda.Text = Convert.ToString(komutDoluOda.ExecuteScalar());
+            //}
+            //int toplam;
+            //using (SqlCommand komutKisiSayisi = new SqlCommand(sorguYetiskin, baglanti))
+            //{
+            //    toplam = Convert.ToInt32(Convert.ToString(komutKisiSayisi.ExecuteScalar()));
+            //}
 
-            using (SqlCommand komutKisiSayisi2 = new SqlCommand(sorguCocuk, baglanti))
-            {
-                toplam += Convert.ToInt32(Convert.ToString(komutKisiSayisi2.ExecuteScalar()));
-                toplamKisi.Text = Convert.ToString(toplam);
-            }
+            //using (SqlCommand komutKisiSayisi2 = new SqlCommand(sorguCocuk, baglanti))
+            //{
+            //    toplam += Convert.ToInt32(Convert.ToString(komutKisiSayisi2.ExecuteScalar()));
+            //    toplamKisi.Text = Convert.ToString(toplam);
+            //}
         }
         private void Form4_Load(object sender, EventArgs e)
         {
@@ -71,11 +72,11 @@ namespace Otel_Takip_Sistemi
 
         private void oda101_Click(object sender, EventArgs e)
         {
+            oda = "101";
             Form5 form5 = new Form5();
-            this.Hide();
             form5.Show();
         }
-
+       
         private void textBox13_TextChanged(object sender, EventArgs e)
         {
 
