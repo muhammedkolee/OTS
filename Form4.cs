@@ -71,7 +71,9 @@ namespace Otel_Takip_Sistemi
 
         private void oda101_Click(object sender, EventArgs e)
         {
-
+            Form5 form5 = new Form5();
+            this.Hide();
+            form5.Show();
         }
 
         private void textBox13_TextChanged(object sender, EventArgs e)
@@ -82,6 +84,13 @@ namespace Otel_Takip_Sistemi
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form5 form5 = new Form5();
+            this.Hide();
+            form5.Show();
         }
     }
 }

@@ -87,6 +87,7 @@
             textBox3 = new TextBox();
             textBox2 = new TextBox();
             textBox1 = new TextBox();
+            button1 = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox4.SuspendLayout();
@@ -787,11 +788,22 @@
             textBox1.TabIndex = 0;
             textBox1.Text = "Toplam Oda";
             // 
+            // button1
+            // 
+            button1.Location = new Point(605, 712);
+            button1.Name = "button1";
+            button1.Size = new Size(792, 331);
+            button1.TabIndex = 2;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // Odalar
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1882, 1055);
+            Controls.Add(button1);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -870,5 +882,6 @@
         private TextBox doluOda;
         private TextBox toplamKisi;
         private TextBox gelecekler;
+        private Button button1;
     }
 }

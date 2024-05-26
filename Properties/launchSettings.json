@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Otel Takip Sistemi": {
+      "commandName": "Project",
+      "hotReloadEnabled": false
+    }
+  }
+}
