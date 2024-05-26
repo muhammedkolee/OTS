@@ -12,10 +12,10 @@ using Microsoft.Data.SqlClient;
 
 namespace Otel_Takip_Sistemi
 {
-    public partial class Form2 : Form
+    public partial class Kayit : Form
     {
         public string conString = "Data Source=MUHAMMED\\SQLEXPRESS;Initial Catalog=Giris;Integrated Security=True;Trust Server Certificate=True";
-        public Form2()
+        public Kayit()
         {
             InitializeComponent();
         }
@@ -37,7 +37,7 @@ namespace Otel_Takip_Sistemi
 
             }
 
-            Form1 anaForm = new Form1();
+            Giris anaForm = new Giris();
             MessageBox.Show("Kullanıcı başarıyla kaydedildi!", "Kayıt", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Hide();
             anaForm.Show();

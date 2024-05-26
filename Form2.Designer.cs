@@ -1,6 +1,6 @@
 ﻿namespace Otel_Takip_Sistemi
 {
-    partial class Form2
+    partial class Kayit
     {
         /// <summary>
         /// Required designer variable.
@@ -31,17 +31,17 @@
             groupBox1 = new GroupBox();
             save = new Button();
             password = new TextBox();
-            nickname = new TextBox();
-            number = new TextBox();
-            surname = new TextBox();
-            name = new TextBox();
-            tcno = new TextBox();
+            tcLabel = new Label();
+            numberLabel = new Label();
             passwordLabel = new Label();
             nicknameLabel = new Label();
-            numberLabel = new Label();
+            tcno = new TextBox();
+            name = new TextBox();
             surnameLabel = new Label();
             nameLabel = new Label();
-            tcLabel = new Label();
+            nickname = new TextBox();
+            surname = new TextBox();
+            number = new TextBox();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -86,45 +86,23 @@
             password.Size = new Size(232, 27);
             password.TabIndex = 11;
             // 
-            // nickname
+            // tcLabel
             // 
-            nickname.Location = new Point(129, 166);
-            nickname.Name = "nickname";
-            nickname.Size = new Size(232, 27);
-            nickname.TabIndex = 10;
+            tcLabel.AutoSize = true;
+            tcLabel.Location = new Point(68, 37);
+            tcLabel.Name = "tcLabel";
+            tcLabel.Size = new Size(55, 20);
+            tcLabel.TabIndex = 0;
+            tcLabel.Text = "TC No.:";
             // 
-            // number
+            // numberLabel
             // 
-            number.Location = new Point(129, 133);
-            number.MaxLength = 11;
-            number.Name = "number";
-            number.Size = new Size(232, 27);
-            number.TabIndex = 9;
-            number.Text = "0";
-            number.KeyPress += number_KeyPress;
-            // 
-            // surname
-            // 
-            surname.Location = new Point(129, 100);
-            surname.Name = "surname";
-            surname.Size = new Size(232, 27);
-            surname.TabIndex = 8;
-            // 
-            // name
-            // 
-            name.Location = new Point(129, 67);
-            name.Name = "name";
-            name.Size = new Size(232, 27);
-            name.TabIndex = 7;
-            // 
-            // tcno
-            // 
-            tcno.Location = new Point(129, 34);
-            tcno.MaxLength = 11;
-            tcno.Name = "tcno";
-            tcno.Size = new Size(232, 27);
-            tcno.TabIndex = 6;
-            tcno.KeyPress += tcno_KeyPress;
+            numberLabel.AutoSize = true;
+            numberLabel.Location = new Point(35, 136);
+            numberLabel.Name = "numberLabel";
+            numberLabel.Size = new Size(88, 20);
+            numberLabel.TabIndex = 3;
+            numberLabel.Text = "Telefon No.:";
             // 
             // passwordLabel
             // 
@@ -144,14 +122,21 @@
             nicknameLabel.TabIndex = 4;
             nicknameLabel.Text = "Kullanıcı Adı:";
             // 
-            // numberLabel
+            // tcno
             // 
-            numberLabel.AutoSize = true;
-            numberLabel.Location = new Point(35, 136);
-            numberLabel.Name = "numberLabel";
-            numberLabel.Size = new Size(88, 20);
-            numberLabel.TabIndex = 3;
-            numberLabel.Text = "Telefon No.:";
+            tcno.Location = new Point(129, 34);
+            tcno.MaxLength = 11;
+            tcno.Name = "tcno";
+            tcno.Size = new Size(232, 27);
+            tcno.TabIndex = 6;
+            tcno.KeyPress += tcno_KeyPress;
+            // 
+            // name
+            // 
+            name.Location = new Point(129, 67);
+            name.Name = "name";
+            name.Size = new Size(232, 27);
+            name.TabIndex = 7;
             // 
             // surnameLabel
             // 
@@ -171,24 +156,38 @@
             nameLabel.TabIndex = 1;
             nameLabel.Text = "Ad:";
             // 
-            // tcLabel
+            // nickname
             // 
-            tcLabel.AutoSize = true;
-            tcLabel.Location = new Point(68, 37);
-            tcLabel.Name = "tcLabel";
-            tcLabel.Size = new Size(55, 20);
-            tcLabel.TabIndex = 0;
-            tcLabel.Text = "TC No.:";
+            nickname.Location = new Point(129, 166);
+            nickname.Name = "nickname";
+            nickname.Size = new Size(232, 27);
+            nickname.TabIndex = 10;
             // 
-            // Form2
+            // surname
+            // 
+            surname.Location = new Point(129, 100);
+            surname.Name = "surname";
+            surname.Size = new Size(232, 27);
+            surname.TabIndex = 8;
+            // 
+            // number
+            // 
+            number.Location = new Point(129, 133);
+            number.MaxLength = 11;
+            number.Name = "number";
+            number.Size = new Size(232, 27);
+            number.TabIndex = 9;
+            number.Text = "0";
+            number.KeyPress += number_KeyPress;
+            // 
+            // Kayit
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(groupBox1);
-            Name = "Form2";
-            Text = "Form2";
-            WindowState = FormWindowState.Maximized;
+            Name = "Kayit";
+            Text = "Kayıt Ol";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);

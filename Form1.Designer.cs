@@ -1,6 +1,6 @@
 ﻿namespace Otel_Takip_Sistemi
 {
-    partial class Form1
+    partial class Giris
     {
         /// <summary>
         ///  Required designer variable.
@@ -109,14 +109,15 @@
             register.UseVisualStyleBackColor = true;
             register.Click += register_Click;
             // 
-            // Form1
+            // Giris
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(groupBox1);
-            Name = "Form1";
-            Text = "Form1";
+            MaximizeBox = false;
+            Name = "Giris";
+            Text = "Giriş";
             WindowState = FormWindowState.Maximized;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
