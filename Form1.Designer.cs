@@ -68,6 +68,7 @@
             // 
             textBox2.Cursor = Cursors.IBeam;
             textBox2.Location = new Point(169, 91);
+            textBox2.MaxLength = 15;
             textBox2.Name = "textBox2";
             textBox2.PasswordChar = '*';
             textBox2.Size = new Size(188, 27);
@@ -77,6 +78,7 @@
             // 
             textBox1.Cursor = Cursors.IBeam;
             textBox1.Location = new Point(169, 53);
+            textBox1.MaxLength = 20;
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(188, 27);
             textBox1.TabIndex = 4;

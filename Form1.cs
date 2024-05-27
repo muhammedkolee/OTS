@@ -26,7 +26,5 @@ namespace Otel_Takip_Sistemi
             this.Hide();
             mainMenu.Show();
         }
-
-
     }
 }

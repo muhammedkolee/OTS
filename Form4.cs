@@ -14,7 +14,7 @@ namespace Otel_Takip_Sistemi
 {
     public partial class Odalar : Form
     {
-        public string conString = "Data Source=DENIZ\\SQLEXPRESS;Initial Catalog=Giris;Integrated Security=True;Trust Server Certificate=True";
+        public string conString = "Data Source=MUHAMMED\\SQLEXPRESS;Initial Catalog=Giris;Integrated Security=True;Trust Server Certificate=True";
         public static string oda;
 
         string sorguToplamOda = "select count(*) from Odalar";
@@ -64,34 +64,14 @@ namespace Otel_Takip_Sistemi
             OdaBilgi();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+
+        public void Button_Click(object sender, EventArgs e)
         {
-
-        }
-
-
-        private void oda101_Click(object sender, EventArgs e)
-        {
-            oda = "101";
+            oda = (sender as Button).Text.Substring(4);
             Form5 form5 = new Form5();
             form5.Show();
         }
-       
-        private void textBox13_TextChanged(object sender, EventArgs e)
-        {
 
-        }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form5 form5 = new Form5();
-            this.Hide();
-            form5.Show();
-        }
     }
 }

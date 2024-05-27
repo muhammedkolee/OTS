@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            number = new MaskedTextBox();
             save = new Button();
             password = new TextBox();
             tcLabel = new Label();
@@ -41,13 +42,13 @@
             nameLabel = new Label();
             nickname = new TextBox();
             surname = new TextBox();
-            number = new TextBox();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
             groupBox1.Anchor = AnchorStyles.None;
+            groupBox1.Controls.Add(number);
             groupBox1.Controls.Add(save);
             groupBox1.Controls.Add(password);
             groupBox1.Controls.Add(tcLabel);
@@ -60,13 +61,20 @@
             groupBox1.Controls.Add(nameLabel);
             groupBox1.Controls.Add(nickname);
             groupBox1.Controls.Add(surname);
-            groupBox1.Controls.Add(number);
             groupBox1.Location = new Point(183, 100);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(392, 296);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Kayıt Ol";
+            // 
+            // number
+            // 
+            number.Location = new Point(129, 135);
+            number.Mask = "(999) 000-0000";
+            number.Name = "number";
+            number.Size = new Size(232, 27);
+            number.TabIndex = 13;
             // 
             // save
             // 
@@ -83,6 +91,7 @@
             password.Location = new Point(129, 199);
             password.MaxLength = 15;
             password.Name = "password";
+            password.PasswordChar = '*';
             password.Size = new Size(232, 27);
             password.TabIndex = 11;
             // 
@@ -134,6 +143,7 @@
             // name
             // 
             name.Location = new Point(129, 67);
+            name.MaxLength = 50;
             name.Name = "name";
             name.Size = new Size(232, 27);
             name.TabIndex = 7;
@@ -159,6 +169,7 @@
             // nickname
             // 
             nickname.Location = new Point(129, 166);
+            nickname.MaxLength = 20;
             nickname.Name = "nickname";
             nickname.Size = new Size(232, 27);
             nickname.TabIndex = 10;
@@ -166,19 +177,10 @@
             // surname
             // 
             surname.Location = new Point(129, 100);
+            surname.MaxLength = 50;
             surname.Name = "surname";
             surname.Size = new Size(232, 27);
             surname.TabIndex = 8;
-            // 
-            // number
-            // 
-            number.Location = new Point(129, 133);
-            number.MaxLength = 11;
-            number.Name = "number";
-            number.Size = new Size(232, 27);
-            number.TabIndex = 9;
-            number.Text = "0";
-            number.KeyPress += number_KeyPress;
             // 
             // Kayit
             // 
@@ -196,7 +198,6 @@
         #endregion
 
         private GroupBox groupBox1;
-        private TextBox number;
         private TextBox surname;
         private TextBox name;
         private TextBox tcno;
@@ -209,5 +210,6 @@
         private Button save;
         private TextBox password;
         private TextBox nickname;
+        private MaskedTextBox number;
     }
 }

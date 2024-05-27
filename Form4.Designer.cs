@@ -87,7 +87,6 @@
             textBox3 = new TextBox();
             textBox2 = new TextBox();
             textBox1 = new TextBox();
-            button1 = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox4.SuspendLayout();
@@ -153,6 +152,7 @@
             oda410.TabIndex = 40;
             oda410.Text = "Oda 410";
             oda410.UseVisualStyleBackColor = true;
+            oda410.Click += Button_Click;
             // 
             // oda409
             // 
@@ -164,6 +164,7 @@
             oda409.TabIndex = 39;
             oda409.Text = "Oda 409";
             oda409.UseVisualStyleBackColor = true;
+            oda409.Click += Button_Click;
             // 
             // oda408
             // 
@@ -175,6 +176,7 @@
             oda408.TabIndex = 38;
             oda408.Text = "Oda 408";
             oda408.UseVisualStyleBackColor = true;
+            oda408.Click += Button_Click;
             // 
             // oda407
             // 
@@ -186,6 +188,7 @@
             oda407.TabIndex = 37;
             oda407.Text = "Oda 407";
             oda407.UseVisualStyleBackColor = true;
+            oda407.Click += Button_Click;
             // 
             // oda406
             // 
@@ -197,6 +200,7 @@
             oda406.TabIndex = 36;
             oda406.Text = "Oda 406";
             oda406.UseVisualStyleBackColor = true;
+            oda406.Click += Button_Click;
             // 
             // oda405
             // 
@@ -208,6 +212,7 @@
             oda405.TabIndex = 35;
             oda405.Text = "Oda 405";
             oda405.UseVisualStyleBackColor = true;
+            oda405.Click += Button_Click;
             // 
             // oda404
             // 
@@ -219,6 +224,7 @@
             oda404.TabIndex = 34;
             oda404.Text = "Oda 404";
             oda404.UseVisualStyleBackColor = true;
+            oda404.Click += Button_Click;
             // 
             // oda403
             // 
@@ -230,6 +236,7 @@
             oda403.TabIndex = 33;
             oda403.Text = "Oda 403";
             oda403.UseVisualStyleBackColor = true;
+            oda403.Click += Button_Click;
             // 
             // oda402
             // 
@@ -241,6 +248,7 @@
             oda402.TabIndex = 32;
             oda402.Text = "Oda 402";
             oda402.UseVisualStyleBackColor = true;
+            oda402.Click += Button_Click;
             // 
             // oda401
             // 
@@ -252,6 +260,7 @@
             oda401.TabIndex = 31;
             oda401.Text = "Oda 401";
             oda401.UseVisualStyleBackColor = true;
+            oda401.Click += Button_Click;
             // 
             // oda310
             // 
@@ -263,6 +272,7 @@
             oda310.TabIndex = 30;
             oda310.Text = "Oda 310";
             oda310.UseVisualStyleBackColor = true;
+            oda310.Click += Button_Click;
             // 
             // oda309
             // 
@@ -274,6 +284,7 @@
             oda309.TabIndex = 29;
             oda309.Text = "Oda 309";
             oda309.UseVisualStyleBackColor = true;
+            oda309.Click += Button_Click;
             // 
             // oda308
             // 
@@ -285,6 +296,7 @@
             oda308.TabIndex = 28;
             oda308.Text = "Oda 308";
             oda308.UseVisualStyleBackColor = true;
+            oda308.Click += Button_Click;
             // 
             // oda307
             // 
@@ -296,6 +308,7 @@
             oda307.TabIndex = 27;
             oda307.Text = "Oda 307";
             oda307.UseVisualStyleBackColor = true;
+            oda307.Click += Button_Click;
             // 
             // oda306
             // 
@@ -307,6 +320,7 @@
             oda306.TabIndex = 26;
             oda306.Text = "Oda 306";
             oda306.UseVisualStyleBackColor = true;
+            oda306.Click += Button_Click;
             // 
             // oda305
             // 
@@ -318,6 +332,7 @@
             oda305.TabIndex = 25;
             oda305.Text = "Oda 305";
             oda305.UseVisualStyleBackColor = true;
+            oda305.Click += Button_Click;
             // 
             // oda304
             // 
@@ -329,6 +344,7 @@
             oda304.TabIndex = 24;
             oda304.Text = "Oda 304";
             oda304.UseVisualStyleBackColor = true;
+            oda304.Click += Button_Click;
             // 
             // oda303
             // 
@@ -340,6 +356,7 @@
             oda303.TabIndex = 23;
             oda303.Text = "Oda 303";
             oda303.UseVisualStyleBackColor = true;
+            oda303.Click += Button_Click;
             // 
             // oda302
             // 
@@ -351,6 +368,7 @@
             oda302.TabIndex = 22;
             oda302.Text = "Oda 302";
             oda302.UseVisualStyleBackColor = true;
+            oda302.Click += Button_Click;
             // 
             // oda301
             // 
@@ -362,6 +380,7 @@
             oda301.TabIndex = 21;
             oda301.Text = "Oda 301";
             oda301.UseVisualStyleBackColor = true;
+            oda301.Click += Button_Click;
             // 
             // oda210
             // 
@@ -373,6 +392,7 @@
             oda210.TabIndex = 20;
             oda210.Text = "Oda 210";
             oda210.UseVisualStyleBackColor = true;
+            oda210.Click += Button_Click;
             // 
             // oda209
             // 
@@ -384,6 +404,7 @@
             oda209.TabIndex = 19;
             oda209.Text = "Oda 209";
             oda209.UseVisualStyleBackColor = true;
+            oda209.Click += Button_Click;
             // 
             // oda208
             // 
@@ -395,6 +416,7 @@
             oda208.TabIndex = 18;
             oda208.Text = "Oda 208";
             oda208.UseVisualStyleBackColor = true;
+            oda208.Click += Button_Click;
             // 
             // oda207
             // 
@@ -406,6 +428,7 @@
             oda207.TabIndex = 17;
             oda207.Text = "Oda 207";
             oda207.UseVisualStyleBackColor = true;
+            oda207.Click += Button_Click;
             // 
             // oda206
             // 
@@ -417,6 +440,7 @@
             oda206.TabIndex = 16;
             oda206.Text = "Oda 206";
             oda206.UseVisualStyleBackColor = true;
+            oda206.Click += Button_Click;
             // 
             // oda205
             // 
@@ -428,6 +452,7 @@
             oda205.TabIndex = 15;
             oda205.Text = "Oda 205";
             oda205.UseVisualStyleBackColor = true;
+            oda205.Click += Button_Click;
             // 
             // oda204
             // 
@@ -439,6 +464,7 @@
             oda204.TabIndex = 14;
             oda204.Text = "Oda 204";
             oda204.UseVisualStyleBackColor = true;
+            oda204.Click += Button_Click;
             // 
             // oda203
             // 
@@ -450,6 +476,7 @@
             oda203.TabIndex = 13;
             oda203.Text = "Oda 203";
             oda203.UseVisualStyleBackColor = true;
+            oda203.Click += Button_Click;
             // 
             // oda202
             // 
@@ -461,6 +488,7 @@
             oda202.TabIndex = 12;
             oda202.Text = "Oda 202";
             oda202.UseVisualStyleBackColor = true;
+            oda202.Click += Button_Click;
             // 
             // oda201
             // 
@@ -472,6 +500,7 @@
             oda201.TabIndex = 11;
             oda201.Text = "Oda 201";
             oda201.UseVisualStyleBackColor = true;
+            oda201.Click += Button_Click;
             // 
             // oda110
             // 
@@ -483,6 +512,7 @@
             oda110.TabIndex = 10;
             oda110.Text = "Oda 110";
             oda110.UseVisualStyleBackColor = true;
+            oda110.Click += Button_Click;
             // 
             // oda109
             // 
@@ -494,6 +524,7 @@
             oda109.TabIndex = 9;
             oda109.Text = "Oda 109";
             oda109.UseVisualStyleBackColor = true;
+            oda109.Click += Button_Click;
             // 
             // oda108
             // 
@@ -505,6 +536,7 @@
             oda108.TabIndex = 8;
             oda108.Text = "Oda 108";
             oda108.UseVisualStyleBackColor = true;
+            oda108.Click += Button_Click;
             // 
             // oda107
             // 
@@ -516,6 +548,7 @@
             oda107.TabIndex = 7;
             oda107.Text = "Oda 107";
             oda107.UseVisualStyleBackColor = true;
+            oda107.Click += Button_Click;
             // 
             // oda106
             // 
@@ -527,6 +560,7 @@
             oda106.TabIndex = 6;
             oda106.Text = "Oda 106";
             oda106.UseVisualStyleBackColor = true;
+            oda106.Click += Button_Click;
             // 
             // oda105
             // 
@@ -538,6 +572,7 @@
             oda105.TabIndex = 5;
             oda105.Text = "Oda 105";
             oda105.UseVisualStyleBackColor = true;
+            oda105.Click += Button_Click;
             // 
             // oda104
             // 
@@ -549,6 +584,7 @@
             oda104.TabIndex = 4;
             oda104.Text = "Oda 104";
             oda104.UseVisualStyleBackColor = true;
+            oda104.Click += Button_Click;
             // 
             // oda103
             // 
@@ -560,6 +596,7 @@
             oda103.TabIndex = 3;
             oda103.Text = "Oda 103";
             oda103.UseVisualStyleBackColor = true;
+            oda103.Click += Button_Click;
             // 
             // oda102
             // 
@@ -571,6 +608,7 @@
             oda102.TabIndex = 2;
             oda102.Text = "Oda 102";
             oda102.UseVisualStyleBackColor = true;
+            oda102.Click += Button_Click;
             // 
             // oda101
             // 
@@ -582,7 +620,7 @@
             oda101.TabIndex = 1;
             oda101.Text = "Oda 101";
             oda101.UseVisualStyleBackColor = true;
-            oda101.Click += oda101_Click;
+            oda101.Click += Button_Click;
             // 
             // groupBox2
             // 
@@ -628,7 +666,6 @@
             toplamOda.ReadOnly = true;
             toplamOda.Size = new Size(34, 34);
             toplamOda.TabIndex = 20;
-            toplamOda.TextChanged += textBox13_TextChanged;
             // 
             // bosOda
             // 
@@ -788,22 +825,11 @@
             textBox1.TabIndex = 0;
             textBox1.Text = "Toplam Oda";
             // 
-            // button1
-            // 
-            button1.Location = new Point(605, 712);
-            button1.Name = "button1";
-            button1.Size = new Size(792, 331);
-            button1.TabIndex = 2;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
             // Odalar
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1882, 1055);
-            Controls.Add(button1);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -882,6 +908,5 @@
         private TextBox doluOda;
         private TextBox toplamKisi;
         private TextBox gelecekler;
-        private Button button1;
     }
 }

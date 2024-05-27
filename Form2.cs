@@ -14,7 +14,7 @@ namespace Otel_Takip_Sistemi
 {
     public partial class Kayit : Form
     {
-        public string conString = "Data Source=DENIZ\\SQLEXPRESS;Initial Catalog=Giris;Integrated Security=True;Trust Server Certificate=True";
+        public string conString = "Data Source=MUHAMMED\\SQLEXPRESS;Initial Catalog=Giris;Integrated Security=True;Trust Server Certificate=True";
         public Kayit()
         {
             InitializeComponent();
@@ -30,7 +30,7 @@ namespace Otel_Takip_Sistemi
                 komut.Parameters.AddWithValue("@TcNo", tcno.Text);
                 komut.Parameters.AddWithValue("@Ad", name.Text);
                 komut.Parameters.AddWithValue("@Soyad", surname.Text);
-                komut.Parameters.AddWithValue("@Telefon", number.Text);
+                komut.Parameters.AddWithValue("@Telefon", Convert.ToString(number.Text));
                 komut.Parameters.AddWithValue("@nick", nickname.Text);
                 komut.Parameters.AddWithValue("@pass", password.Text);
                 komut.ExecuteNonQuery();
