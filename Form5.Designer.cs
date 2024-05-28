@@ -48,7 +48,8 @@
             label1 = new Label();
             kaydet = new Button();
             groupBox2 = new GroupBox();
-            maskedTextBox1 = new MaskedTextBox();
+            dogum = new DateTimePicker();
+            telefon = new MaskedTextBox();
             kadinRadioButton = new RadioButton();
             erkekRadioButton = new RadioButton();
             mail = new TextBox();
@@ -67,7 +68,7 @@
             label8 = new Label();
             label7 = new Label();
             helpProvider1 = new HelpProvider();
-            dateTimePicker1 = new DateTimePicker();
+            sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -96,10 +97,11 @@
             groupBox1.Size = new Size(690, 418);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
-            groupBox1.Text = "Rezervasyon Bilgileri";
+            groupBox1.Text = " ";
             // 
             // cikisTarih
             // 
+            cikisTarih.CustomFormat = "dd/mm/yyyy";
             cikisTarih.Location = new Point(177, 214);
             cikisTarih.Name = "cikisTarih";
             cikisTarih.Size = new Size(272, 27);
@@ -108,8 +110,11 @@
             // 
             // girisTarih
             // 
+            girisTarih.CustomFormat = "dd/mm/yyyy";
+            girisTarih.ImeMode = ImeMode.NoControl;
             girisTarih.Location = new Point(177, 169);
             girisTarih.Name = "girisTarih";
+            helpProvider1.SetShowHelp(girisTarih, false);
             girisTarih.Size = new Size(272, 27);
             girisTarih.TabIndex = 35;
             // 
@@ -117,7 +122,7 @@
             // 
             CocukSayi.DropDownStyle = ComboBoxStyle.DropDownList;
             CocukSayi.FormattingEnabled = true;
-            CocukSayi.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6" });
+            CocukSayi.Items.AddRange(new object[] { "0", "1", "2", "3", "4", "5", "6" });
             CocukSayi.Location = new Point(486, 77);
             CocukSayi.Name = "CocukSayi";
             CocukSayi.Size = new Size(57, 28);
@@ -257,7 +262,7 @@
             // 
             // kaydet
             // 
-            kaydet.Location = new Point(895, 436);
+            kaydet.Location = new Point(1019, 436);
             kaydet.Name = "kaydet";
             kaydet.Size = new Size(116, 55);
             kaydet.TabIndex = 10;
@@ -267,8 +272,8 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(dateTimePicker1);
-            groupBox2.Controls.Add(maskedTextBox1);
+            groupBox2.Controls.Add(dogum);
+            groupBox2.Controls.Add(telefon);
             groupBox2.Controls.Add(kadinRadioButton);
             groupBox2.Controls.Add(erkekRadioButton);
             groupBox2.Controls.Add(mail);
@@ -293,13 +298,21 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Müşteri Bilgileri";
             // 
-            // maskedTextBox1
+            // dogum
             // 
-            maskedTextBox1.Location = new Point(143, 291);
-            maskedTextBox1.Mask = "(999) 000-0000";
-            maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(137, 27);
-            maskedTextBox1.TabIndex = 2;
+            dogum.Location = new Point(143, 333);
+            dogum.Name = "dogum";
+            dogum.Size = new Size(272, 27);
+            dogum.TabIndex = 36;
+            // 
+            // telefon
+            // 
+            telefon.Location = new Point(143, 291);
+            telefon.Mask = "0(999) 000-0000";
+            telefon.Name = "telefon";
+            telefon.Size = new Size(137, 27);
+            telefon.TabIndex = 2;
+            telefon.Text = "0";
             // 
             // kadinRadioButton
             // 
@@ -463,17 +476,16 @@
             label7.TabIndex = 13;
             label7.Text = "Tc No.";
             // 
-            // dateTimePicker1
+            // sqlCommand1
             // 
-            dateTimePicker1.Location = new Point(143, 333);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(272, 27);
-            dateTimePicker1.TabIndex = 36;
+            sqlCommand1.CommandTimeout = 30;
+            sqlCommand1.EnableOptimizedParameterBinding = false;
             // 
             // Form5
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(1694, 705);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
@@ -500,7 +512,6 @@
         private Label label4;
         private Label label3;
         private Label label2;
-        private DateTimePicker dateTimePicker1;
         private ComboBox comboBox1;
         private Button kaydet;
         private Label label6;
@@ -522,13 +533,15 @@
         private TextBox yas;
         private RadioButton kadinRadioButton;
         private RadioButton erkekRadioButton;
-        private MaskedTextBox maskedTextBox1;
+        private MaskedTextBox telefon;
         private ComboBox CocukSayi;
         private Label label17;
         private ComboBox yetiskinSayi;
         private Label label16;
+        private HelpProvider helpProvider1;
         private DateTimePicker cikisTarih;
         private DateTimePicker girisTarih;
-        private HelpProvider helpProvider1;
+        private DateTimePicker dogum;
+        private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
     }
 }

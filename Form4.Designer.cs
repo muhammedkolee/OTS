@@ -70,26 +70,18 @@
             oda102 = new Button();
             oda101 = new Button();
             groupBox2 = new GroupBox();
-            groupBox4 = new GroupBox();
+            kirliBosOda = new TextBox();
+            textBox7 = new TextBox();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
             toplamOda = new TextBox();
-            bosOda = new TextBox();
+            textBox3 = new TextBox();
+            temizBosOda = new TextBox();
+            textBox4 = new TextBox();
             doluOda = new TextBox();
             toplamKisi = new TextBox();
-            gelecekler = new TextBox();
-            kalanlar = new TextBox();
-            gidenler = new TextBox();
-            gelenler = new TextBox();
-            textBox8 = new TextBox();
-            textBox5 = new TextBox();
-            textBox7 = new TextBox();
-            textBox6 = new TextBox();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
-            groupBox4.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
@@ -625,7 +617,16 @@
             // groupBox2
             // 
             groupBox2.Anchor = AnchorStyles.None;
-            groupBox2.Controls.Add(groupBox4);
+            groupBox2.Controls.Add(kirliBosOda);
+            groupBox2.Controls.Add(textBox7);
+            groupBox2.Controls.Add(textBox1);
+            groupBox2.Controls.Add(textBox2);
+            groupBox2.Controls.Add(toplamOda);
+            groupBox2.Controls.Add(textBox3);
+            groupBox2.Controls.Add(temizBosOda);
+            groupBox2.Controls.Add(textBox4);
+            groupBox2.Controls.Add(doluOda);
+            groupBox2.Controls.Add(toplamKisi);
             groupBox2.Location = new Point(1403, 12);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(267, 541);
@@ -633,55 +634,96 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Oda Bilgi";
             // 
-            // groupBox4
+            // kirliBosOda
             // 
-            groupBox4.Controls.Add(toplamOda);
-            groupBox4.Controls.Add(bosOda);
-            groupBox4.Controls.Add(doluOda);
-            groupBox4.Controls.Add(toplamKisi);
-            groupBox4.Controls.Add(gelecekler);
-            groupBox4.Controls.Add(kalanlar);
-            groupBox4.Controls.Add(gidenler);
-            groupBox4.Controls.Add(gelenler);
-            groupBox4.Controls.Add(textBox8);
-            groupBox4.Controls.Add(textBox5);
-            groupBox4.Controls.Add(textBox7);
-            groupBox4.Controls.Add(textBox6);
-            groupBox4.Controls.Add(textBox4);
-            groupBox4.Controls.Add(textBox3);
-            groupBox4.Controls.Add(textBox2);
-            groupBox4.Controls.Add(textBox1);
-            groupBox4.Location = new Point(9, 26);
-            groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(183, 487);
-            groupBox4.TabIndex = 0;
-            groupBox4.TabStop = false;
+            kirliBosOda.BorderStyle = BorderStyle.FixedSingle;
+            kirliBosOda.Font = new Font("Segoe UI", 12F);
+            kirliBosOda.Location = new Point(227, 159);
+            kirliBosOda.Name = "kirliBosOda";
+            kirliBosOda.ReadOnly = true;
+            kirliBosOda.Size = new Size(34, 34);
+            kirliBosOda.TabIndex = 24;
+            // 
+            // textBox7
+            // 
+            textBox7.BorderStyle = BorderStyle.FixedSingle;
+            textBox7.Font = new Font("Segoe UI", 12F);
+            textBox7.Location = new Point(6, 159);
+            textBox7.Name = "textBox7";
+            textBox7.ReadOnly = true;
+            textBox7.Size = new Size(215, 34);
+            textBox7.TabIndex = 23;
+            textBox7.Text = "Kirli Boş Oda";
+            // 
+            // textBox1
+            // 
+            textBox1.BorderStyle = BorderStyle.FixedSingle;
+            textBox1.Font = new Font("Segoe UI", 12F);
+            textBox1.Location = new Point(6, 39);
+            textBox1.Name = "textBox1";
+            textBox1.ReadOnly = true;
+            textBox1.Size = new Size(215, 34);
+            textBox1.TabIndex = 0;
+            textBox1.Text = "Toplam Oda";
+            // 
+            // textBox2
+            // 
+            textBox2.BorderStyle = BorderStyle.FixedSingle;
+            textBox2.Font = new Font("Segoe UI", 12F);
+            textBox2.Location = new Point(6, 119);
+            textBox2.Name = "textBox2";
+            textBox2.ReadOnly = true;
+            textBox2.Size = new Size(215, 34);
+            textBox2.TabIndex = 1;
+            textBox2.Text = "Temiz Boş Oda";
             // 
             // toplamOda
             // 
             toplamOda.BorderStyle = BorderStyle.FixedSingle;
             toplamOda.Font = new Font("Segoe UI", 12F);
-            toplamOda.Location = new Point(137, 29);
+            toplamOda.Location = new Point(227, 39);
             toplamOda.Name = "toplamOda";
             toplamOda.ReadOnly = true;
             toplamOda.Size = new Size(34, 34);
             toplamOda.TabIndex = 20;
             // 
-            // bosOda
+            // textBox3
             // 
-            bosOda.BorderStyle = BorderStyle.FixedSingle;
-            bosOda.Font = new Font("Segoe UI", 12F);
-            bosOda.Location = new Point(137, 68);
-            bosOda.Name = "bosOda";
-            bosOda.ReadOnly = true;
-            bosOda.Size = new Size(34, 34);
-            bosOda.TabIndex = 19;
+            textBox3.BorderStyle = BorderStyle.FixedSingle;
+            textBox3.Font = new Font("Segoe UI", 12F);
+            textBox3.Location = new Point(6, 79);
+            textBox3.Name = "textBox3";
+            textBox3.ReadOnly = true;
+            textBox3.Size = new Size(215, 34);
+            textBox3.TabIndex = 2;
+            textBox3.Text = "Dolu Oda";
+            // 
+            // temizBosOda
+            // 
+            temizBosOda.BorderStyle = BorderStyle.FixedSingle;
+            temizBosOda.Font = new Font("Segoe UI", 12F);
+            temizBosOda.Location = new Point(227, 118);
+            temizBosOda.Name = "temizBosOda";
+            temizBosOda.ReadOnly = true;
+            temizBosOda.Size = new Size(34, 34);
+            temizBosOda.TabIndex = 19;
+            // 
+            // textBox4
+            // 
+            textBox4.BorderStyle = BorderStyle.FixedSingle;
+            textBox4.Font = new Font("Segoe UI", 12F);
+            textBox4.Location = new Point(6, 200);
+            textBox4.Name = "textBox4";
+            textBox4.ReadOnly = true;
+            textBox4.Size = new Size(215, 34);
+            textBox4.TabIndex = 3;
+            textBox4.Text = "Toplam Kişi";
             // 
             // doluOda
             // 
             doluOda.BorderStyle = BorderStyle.FixedSingle;
             doluOda.Font = new Font("Segoe UI", 12F);
-            doluOda.Location = new Point(137, 108);
+            doluOda.Location = new Point(227, 78);
             doluOda.Name = "doluOda";
             doluOda.ReadOnly = true;
             doluOda.Size = new Size(34, 34);
@@ -691,139 +733,11 @@
             // 
             toplamKisi.BorderStyle = BorderStyle.FixedSingle;
             toplamKisi.Font = new Font("Segoe UI", 12F);
-            toplamKisi.Location = new Point(137, 148);
+            toplamKisi.Location = new Point(227, 200);
             toplamKisi.Name = "toplamKisi";
             toplamKisi.ReadOnly = true;
             toplamKisi.Size = new Size(34, 34);
             toplamKisi.TabIndex = 17;
-            // 
-            // gelecekler
-            // 
-            gelecekler.BorderStyle = BorderStyle.FixedSingle;
-            gelecekler.Font = new Font("Segoe UI", 12F);
-            gelecekler.Location = new Point(137, 188);
-            gelecekler.Name = "gelecekler";
-            gelecekler.ReadOnly = true;
-            gelecekler.Size = new Size(34, 34);
-            gelecekler.TabIndex = 16;
-            // 
-            // kalanlar
-            // 
-            kalanlar.BorderStyle = BorderStyle.FixedSingle;
-            kalanlar.Font = new Font("Segoe UI", 12F);
-            kalanlar.Location = new Point(137, 308);
-            kalanlar.Name = "kalanlar";
-            kalanlar.ReadOnly = true;
-            kalanlar.Size = new Size(34, 34);
-            kalanlar.TabIndex = 15;
-            // 
-            // gidenler
-            // 
-            gidenler.BorderStyle = BorderStyle.FixedSingle;
-            gidenler.Font = new Font("Segoe UI", 12F);
-            gidenler.Location = new Point(137, 268);
-            gidenler.Name = "gidenler";
-            gidenler.ReadOnly = true;
-            gidenler.Size = new Size(34, 34);
-            gidenler.TabIndex = 14;
-            // 
-            // gelenler
-            // 
-            gelenler.BorderStyle = BorderStyle.FixedSingle;
-            gelenler.Font = new Font("Segoe UI", 12F);
-            gelenler.Location = new Point(137, 228);
-            gelenler.Name = "gelenler";
-            gelenler.ReadOnly = true;
-            gelenler.Size = new Size(34, 34);
-            gelenler.TabIndex = 13;
-            // 
-            // textBox8
-            // 
-            textBox8.BorderStyle = BorderStyle.FixedSingle;
-            textBox8.Font = new Font("Segoe UI", 12F);
-            textBox8.Location = new Point(6, 308);
-            textBox8.Name = "textBox8";
-            textBox8.ReadOnly = true;
-            textBox8.Size = new Size(125, 34);
-            textBox8.TabIndex = 7;
-            textBox8.Text = "Kalanlar";
-            // 
-            // textBox5
-            // 
-            textBox5.BorderStyle = BorderStyle.FixedSingle;
-            textBox5.Font = new Font("Segoe UI", 12F);
-            textBox5.Location = new Point(6, 188);
-            textBox5.Name = "textBox5";
-            textBox5.ReadOnly = true;
-            textBox5.Size = new Size(125, 34);
-            textBox5.TabIndex = 4;
-            textBox5.Text = "Gelecekler";
-            // 
-            // textBox7
-            // 
-            textBox7.BorderStyle = BorderStyle.FixedSingle;
-            textBox7.Font = new Font("Segoe UI", 12F);
-            textBox7.Location = new Point(6, 268);
-            textBox7.Name = "textBox7";
-            textBox7.ReadOnly = true;
-            textBox7.Size = new Size(125, 34);
-            textBox7.TabIndex = 6;
-            textBox7.Text = "Gidenler";
-            // 
-            // textBox6
-            // 
-            textBox6.BorderStyle = BorderStyle.FixedSingle;
-            textBox6.Font = new Font("Segoe UI", 12F);
-            textBox6.Location = new Point(6, 228);
-            textBox6.Name = "textBox6";
-            textBox6.ReadOnly = true;
-            textBox6.Size = new Size(125, 34);
-            textBox6.TabIndex = 5;
-            textBox6.Text = "Gelenler";
-            // 
-            // textBox4
-            // 
-            textBox4.BorderStyle = BorderStyle.FixedSingle;
-            textBox4.Font = new Font("Segoe UI", 12F);
-            textBox4.Location = new Point(6, 148);
-            textBox4.Name = "textBox4";
-            textBox4.ReadOnly = true;
-            textBox4.Size = new Size(125, 34);
-            textBox4.TabIndex = 3;
-            textBox4.Text = "Toplam Kişi";
-            // 
-            // textBox3
-            // 
-            textBox3.BorderStyle = BorderStyle.FixedSingle;
-            textBox3.Font = new Font("Segoe UI", 12F);
-            textBox3.Location = new Point(6, 108);
-            textBox3.Name = "textBox3";
-            textBox3.ReadOnly = true;
-            textBox3.Size = new Size(125, 34);
-            textBox3.TabIndex = 2;
-            textBox3.Text = "Dolu Oda";
-            // 
-            // textBox2
-            // 
-            textBox2.BorderStyle = BorderStyle.FixedSingle;
-            textBox2.Font = new Font("Segoe UI", 12F);
-            textBox2.Location = new Point(6, 68);
-            textBox2.Name = "textBox2";
-            textBox2.ReadOnly = true;
-            textBox2.Size = new Size(125, 34);
-            textBox2.TabIndex = 1;
-            textBox2.Text = "Boş Oda";
-            // 
-            // textBox1
-            // 
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Font = new Font("Segoe UI", 12F);
-            textBox1.Location = new Point(6, 28);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(125, 34);
-            textBox1.TabIndex = 0;
-            textBox1.Text = "Toplam Oda";
             // 
             // Odalar
             // 
@@ -841,8 +755,7 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
-            groupBox4.ResumeLayout(false);
-            groupBox4.PerformLayout();
+            groupBox2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -892,21 +805,15 @@
         private Button oda201;
         private GroupBox groupBox2;
         private GroupBox groupBox4;
-        private TextBox textBox8;
-        private TextBox textBox7;
-        private TextBox textBox6;
-        private TextBox textBox5;
         private TextBox textBox4;
         private TextBox textBox3;
         private TextBox textBox2;
         private TextBox textBox1;
-        private TextBox kalanlar;
-        private TextBox gidenler;
-        private TextBox gelenler;
         private TextBox toplamOda;
-        private TextBox bosOda;
+        private TextBox temizBosOda;
         private TextBox doluOda;
         private TextBox toplamKisi;
-        private TextBox gelecekler;
+        private TextBox kirliBosOda;
+        private TextBox textBox7;
     }
 }

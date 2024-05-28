@@ -14,7 +14,7 @@ namespace Otel_Takip_Sistemi
 {
     public partial class Form5 : Form
     {
-        string cinsiyet;
+        int cinsiyet;
         public string conString = "Data Source=MUHAMMED\\SQLEXPRESS;Initial Catalog=Giris;Integrated Security=True;Trust Server Certificate=True";
         SqlConnection baglanti;
         string sorguFiyat = "select Fiyat from Odalar where Oda_No = '" + Odalar.oda + "'";
@@ -44,13 +44,36 @@ namespace Otel_Takip_Sistemi
             baglanti.Open();
             if (baglanti.State == System.Data.ConnectionState.Open)
             {
-                SqlCommand komut = new SqlCommand("insert into Rezervasyon(OdaNo, Grup, MusteriTc, GirisTarih, CikisTarih) values(@odaNo, @Grup, @Tc, @Giris, @Cikis)", baglanti);
-                komut.Parameters.AddWithValue("@odaNo", odaNo.Text);
-                komut.Parameters.AddWithValue("@Grup", grup.Text);
-                komut.Parameters.AddWithValue("@Tc", musteriTc.Text);
-                komut.Parameters.AddWithValue("@Giris", girisTarih.Value);
-                komut.Parameters.AddWithValue("@Cikis", cikisTarih.Value);
-                komut.ExecuteNonQuery();
+                SqlCommand komutRezervasyon = new SqlCommand("insert into Rezervasyon(OdaNo, Grup, MusteriTc, GirisTarih, CikisTarih) values(@odaNo, @Grup, @Tc, @Giris, @Cikis)", baglanti);
+                komutRezervasyon.Parameters.AddWithValue("@odaNo", odaNo.Text);
+                komutRezervasyon.Parameters.AddWithValue("@Grup", grup.Text);
+                komutRezervasyon.Parameters.AddWithValue("@Tc", musteriTc.Text);
+                komutRezervasyon.Parameters.AddWithValue("@Giris", girisTarih.Value);
+                komutRezervasyon.Parameters.AddWithValue("@Cikis", cikisTarih.Value);
+                komutRezervasyon.ExecuteNonQuery();
+
+                SqlCommand komutOdalar = new SqlCommand("update Odalar set YetiskinSayisi = @YetiskinSayi, CocukSayisi = @CocukSayi, MüşteriTc = @MusteriTc, GirisTarih = @Giris, CikisTarih = @Cikis, RezervasyonDurum = 1 where Oda_No = @OdaNo", baglanti);
+                komutOdalar.Parameters.AddWithValue("@OdaNo", odaNo.Text);
+                komutOdalar.Parameters.AddWithValue("@YetiskinSayi", Convert.ToInt32(yetiskinSayi.Text));
+                komutOdalar.Parameters.AddWithValue("@CocukSayi", Convert.ToInt32(CocukSayi.Text));
+                komutOdalar.Parameters.AddWithValue("@MusteriTc", musteriTc.Text);
+                komutOdalar.Parameters.AddWithValue("@Giris", girisTarih.Value);
+                komutOdalar.Parameters.AddWithValue("@Cikis", cikisTarih.Value);
+                komutOdalar.ExecuteNonQuery();
+
+                SqlCommand komutMusteri = new SqlCommand("insert into Misafir(TcNo, Ad, Soyad, Uyruk, Cinsiyet, Yaş, Telefon, DogumTarih, Mail) values(@Tc, @Ad, @Soyad, @Uyruk, @Cinsiyet, @Yas, @Telefon, @Dogum, @Mail)", baglanti);
+                komutMusteri.Parameters.AddWithValue("@Tc", tcNo.Text);
+                komutMusteri.Parameters.AddWithValue("@Ad", Ad.Text);
+                komutMusteri.Parameters.AddWithValue("@Soyad", Soyad.Text);
+                komutMusteri.Parameters.AddWithValue("@Uyruk", uyruk.Text);
+                komutMusteri.Parameters.AddWithValue("@Cinsiyet", cinsiyet);
+                komutMusteri.Parameters.AddWithValue("@Yas", Convert.ToInt32(yas.Text));
+                komutMusteri.Parameters.AddWithValue("@Telefon", Convert.ToString(telefon.Text));
+                komutMusteri.Parameters.AddWithValue("@Dogum", dogum.Value);
+                komutMusteri.Parameters.AddWithValue("@Mail", mail.Text);
+                komutMusteri.ExecuteNonQuery();
+
+                MessageBox.Show("Başarıyla Kaydedildi", "Kayıt", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         private void Soyad_TextChanged(object sender, EventArgs e)
@@ -65,12 +88,12 @@ namespace Otel_Takip_Sistemi
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            cinsiyet = "Erkek";
+            cinsiyet = 0;
         }
 
         private void kadinRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            cinsiyet = "Kadın";
+            cinsiyet = 1;
         }
 
         private void tcNo_KeyPress(object sender, KeyPressEventArgs e)

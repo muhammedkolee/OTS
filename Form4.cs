@@ -18,8 +18,9 @@ namespace Otel_Takip_Sistemi
         public static string oda;
 
         string sorguToplamOda = "select count(*) from Odalar";
-        string sorguBosOda = "select count(*) from Odalar where Durum = 0";
-        string sorguDoluOda = "select count(*) from Odalar where Durum = 1";
+        string sorguDoluOda = "select count(*) from Odalar where RezervasyonDurum = 1";
+        string sorguTemizBosOda = "select count(*) from Odalar where RezervasyonDurum = 0 and Durum = 0";
+        string sorguKirliBosOda = "select count(*) from Odalar where RezervasyonDurum = 0 and Durum = 1";
         string sorguYetiskin = "select sum(YetiskinSayisi) from Odalar";
         string sorguCocuk = "select sum(CocukSayisi) from Odalar";
         public Odalar()
@@ -38,32 +39,37 @@ namespace Otel_Takip_Sistemi
                 toplamOda.Text = Convert.ToString(komutToplamOda.ExecuteScalar());
             }
 
-            using (SqlCommand komutBosOda = new SqlCommand(sorguBosOda, baglanti))
+            using (SqlCommand komutTemizBosOda = new SqlCommand(sorguTemizBosOda, baglanti))
             {
-                bosOda.Text = Convert.ToString(komutBosOda.ExecuteScalar());
+                temizBosOda.Text = Convert.ToString(komutTemizBosOda.ExecuteScalar());
             }
 
-            //using (SqlCommand komutDoluOda = new SqlCommand(sorguDoluOda, baglanti))
-            //{
-            //    doluOda.Text = Convert.ToString(komutDoluOda.ExecuteScalar());
-            //}
-            //int toplam;
-            //using (SqlCommand komutKisiSayisi = new SqlCommand(sorguYetiskin, baglanti))
-            //{
-            //    toplam = Convert.ToInt32(Convert.ToString(komutKisiSayisi.ExecuteScalar()));
-            //}
+            using (SqlCommand komutKirliBosOda = new SqlCommand(sorguKirliBosOda, baglanti))
+            {
+                kirliBosOda.Text = Convert.ToString(komutKirliBosOda.ExecuteScalar());
+            }
 
-            //using (SqlCommand komutKisiSayisi2 = new SqlCommand(sorguCocuk, baglanti))
-            //{
-            //    toplam += Convert.ToInt32(Convert.ToString(komutKisiSayisi2.ExecuteScalar()));
-            //    toplamKisi.Text = Convert.ToString(toplam);
-            //}
+            using (SqlCommand komutDoluOda = new SqlCommand(sorguDoluOda, baglanti))
+            {
+                doluOda.Text = Convert.ToString(komutDoluOda.ExecuteScalar());
+            }
+
+            int toplam;
+            using (SqlCommand komutKisiSayisi = new SqlCommand(sorguYetiskin, baglanti))
+            {
+                toplam = Convert.ToInt32(Convert.ToString(komutKisiSayisi.ExecuteScalar()));
+            }
+
+            using (SqlCommand komutKisiSayisi2 = new SqlCommand(sorguCocuk, baglanti))
+            {
+                toplam += Convert.ToInt32(Convert.ToString(komutKisiSayisi2.ExecuteScalar()));
+                toplamKisi.Text = Convert.ToString(toplam);
+            }
         }
         private void Form4_Load(object sender, EventArgs e)
         {
             OdaBilgi();
         }
-
 
         public void Button_Click(object sender, EventArgs e)
         {
@@ -71,7 +77,5 @@ namespace Otel_Takip_Sistemi
             Form5 form5 = new Form5();
             form5.Show();
         }
-
-
     }
 }
