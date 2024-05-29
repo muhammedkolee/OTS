@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            textBox2 = new TextBox();
+            FiyatToplam = new TextBox();
+            label20 = new Label();
+            pasaport = new TextBox();
+            label19 = new Label();
             cikisTarih = new DateTimePicker();
             girisTarih = new DateTimePicker();
             CocukSayi = new ComboBox();
@@ -48,6 +53,8 @@
             label1 = new Label();
             kaydet = new Button();
             groupBox2 = new GroupBox();
+            pasaportNo = new TextBox();
+            label18 = new Label();
             dogum = new DateTimePicker();
             telefon = new MaskedTextBox();
             kadinRadioButton = new RadioButton();
@@ -69,12 +76,19 @@
             label7 = new Label();
             helpProvider1 = new HelpProvider();
             sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
+            MusteriKayitlari = new DataGridView();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)MusteriKayitlari).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(textBox2);
+            groupBox1.Controls.Add(FiyatToplam);
+            groupBox1.Controls.Add(label20);
+            groupBox1.Controls.Add(pasaport);
+            groupBox1.Controls.Add(label19);
             groupBox1.Controls.Add(cikisTarih);
             groupBox1.Controls.Add(girisTarih);
             groupBox1.Controls.Add(CocukSayi);
@@ -94,36 +108,83 @@
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(690, 418);
+            groupBox1.Size = new Size(690, 444);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = " ";
             // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(308, 317);
+            textBox2.Name = "textBox2";
+            textBox2.ReadOnly = true;
+            textBox2.Size = new Size(30, 27);
+            textBox2.TabIndex = 41;
+            // 
+            // FiyatToplam
+            // 
+            FiyatToplam.Location = new Point(177, 317);
+            FiyatToplam.Name = "FiyatToplam";
+            FiyatToplam.ReadOnly = true;
+            FiyatToplam.Size = new Size(125, 27);
+            FiyatToplam.TabIndex = 40;
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Font = new Font("Segoe UI", 12F);
+            label20.Location = new Point(8, 316);
+            label20.Name = "label20";
+            label20.Size = new Size(123, 28);
+            label20.TabIndex = 39;
+            label20.Text = "Toplam Fiyat";
+            // 
+            // pasaport
+            // 
+            pasaport.Location = new Point(177, 156);
+            pasaport.Name = "pasaport";
+            pasaport.ReadOnly = true;
+            pasaport.Size = new Size(125, 27);
+            pasaport.TabIndex = 38;
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Font = new Font("Segoe UI", 12F);
+            label19.Location = new Point(8, 155);
+            label19.Name = "label19";
+            label19.Size = new Size(124, 28);
+            label19.TabIndex = 37;
+            label19.Text = "Pasaport No.";
+            // 
             // cikisTarih
             // 
             cikisTarih.CustomFormat = "dd/mm/yyyy";
-            cikisTarih.Location = new Point(177, 214);
+            cikisTarih.Location = new Point(177, 239);
             cikisTarih.Name = "cikisTarih";
             cikisTarih.Size = new Size(272, 27);
             cikisTarih.TabIndex = 36;
-            cikisTarih.Value = new DateTime(2024, 5, 27, 0, 0, 0, 0);
+            cikisTarih.Value = new DateTime(2024, 5, 30, 0, 0, 0, 0);
+            cikisTarih.ValueChanged += cikisTarih_ValueChanged;
             // 
             // girisTarih
             // 
             girisTarih.CustomFormat = "dd/mm/yyyy";
             girisTarih.ImeMode = ImeMode.NoControl;
-            girisTarih.Location = new Point(177, 169);
+            girisTarih.Location = new Point(177, 198);
             girisTarih.Name = "girisTarih";
             helpProvider1.SetShowHelp(girisTarih, false);
             girisTarih.Size = new Size(272, 27);
             girisTarih.TabIndex = 35;
+            girisTarih.Value = new DateTime(2024, 5, 29, 15, 1, 43, 0);
+            girisTarih.ValueChanged += cikisTarih_ValueChanged;
             // 
             // CocukSayi
             // 
             CocukSayi.DropDownStyle = ComboBoxStyle.DropDownList;
             CocukSayi.FormattingEnabled = true;
             CocukSayi.Items.AddRange(new object[] { "0", "1", "2", "3", "4", "5", "6" });
-            CocukSayi.Location = new Point(486, 77);
+            CocukSayi.Location = new Point(486, 81);
             CocukSayi.Name = "CocukSayi";
             CocukSayi.Size = new Size(57, 28);
             CocukSayi.TabIndex = 16;
@@ -132,7 +193,7 @@
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Segoe UI", 12F);
-            label17.Location = new Point(383, 77);
+            label17.Location = new Point(414, 81);
             label17.Name = "label17";
             label17.Size = new Size(66, 28);
             label17.TabIndex = 15;
@@ -152,7 +213,7 @@
             // 
             label16.AutoSize = true;
             label16.Font = new Font("Segoe UI", 12F);
-            label16.Location = new Point(383, 35);
+            label16.Location = new Point(403, 35);
             label16.Name = "label16";
             label16.Size = new Size(77, 28);
             label16.TabIndex = 13;
@@ -162,7 +223,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F);
-            label6.Location = new Point(6, 122);
+            label6.Location = new Point(6, 114);
             label6.Name = "label6";
             label6.Size = new Size(140, 28);
             label6.TabIndex = 12;
@@ -173,14 +234,17 @@
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "$", "€", "₺" });
-            comboBox1.Location = new Point(308, 261);
+            comboBox1.Location = new Point(308, 281);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(57, 28);
+            helpProvider1.SetShowHelp(comboBox1, false);
+            comboBox1.Size = new Size(45, 28);
             comboBox1.TabIndex = 2;
+            comboBox1.Tag = "";
+            comboBox1.TextChanged += comboBox1_TextChanged;
             // 
             // musteriTc
             // 
-            musteriTc.Location = new Point(177, 126);
+            musteriTc.Location = new Point(177, 118);
             musteriTc.Name = "musteriTc";
             musteriTc.ReadOnly = true;
             musteriTc.Size = new Size(125, 27);
@@ -188,7 +252,7 @@
             // 
             // fiyat
             // 
-            fiyat.Location = new Point(177, 261);
+            fiyat.Location = new Point(177, 282);
             fiyat.Name = "fiyat";
             fiyat.ReadOnly = true;
             fiyat.Size = new Size(125, 27);
@@ -204,7 +268,7 @@
             // 
             // grup
             // 
-            grup.Location = new Point(177, 81);
+            grup.Location = new Point(177, 77);
             grup.Name = "grup";
             grup.ReadOnly = true;
             grup.Size = new Size(125, 27);
@@ -214,17 +278,17 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F);
-            label5.Location = new Point(8, 257);
+            label5.Location = new Point(8, 278);
             label5.Name = "label5";
-            label5.Size = new Size(54, 28);
+            label5.Size = new Size(129, 28);
             label5.TabIndex = 4;
-            label5.Text = "Fiyat";
+            label5.Text = "Fiyat(Gecelik)";
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F);
-            label4.Location = new Point(6, 212);
+            label4.Location = new Point(6, 237);
             label4.Name = "label4";
             label4.Size = new Size(103, 28);
             label4.TabIndex = 3;
@@ -234,7 +298,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F);
-            label3.Location = new Point(6, 167);
+            label3.Location = new Point(6, 196);
             label3.Name = "label3";
             label3.Size = new Size(102, 28);
             label3.TabIndex = 2;
@@ -244,7 +308,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F);
-            label2.Location = new Point(6, 77);
+            label2.Location = new Point(6, 73);
             label2.Name = "label2";
             label2.Size = new Size(56, 28);
             label2.TabIndex = 1;
@@ -262,7 +326,7 @@
             // 
             // kaydet
             // 
-            kaydet.Location = new Point(1019, 436);
+            kaydet.Location = new Point(1019, 462);
             kaydet.Name = "kaydet";
             kaydet.Size = new Size(116, 55);
             kaydet.TabIndex = 10;
@@ -272,6 +336,8 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(pasaportNo);
+            groupBox2.Controls.Add(label18);
             groupBox2.Controls.Add(dogum);
             groupBox2.Controls.Add(telefon);
             groupBox2.Controls.Add(kadinRadioButton);
@@ -293,21 +359,41 @@
             groupBox2.Controls.Add(label7);
             groupBox2.Location = new Point(708, 12);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(427, 418);
+            groupBox2.Size = new Size(427, 444);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Müşteri Bilgileri";
             // 
+            // pasaportNo
+            // 
+            pasaportNo.Location = new Point(143, 74);
+            pasaportNo.MaxLength = 9;
+            pasaportNo.Name = "pasaportNo";
+            pasaportNo.Size = new Size(137, 27);
+            pasaportNo.TabIndex = 38;
+            pasaportNo.TextChanged += pasaportNo_TextChanged;
+            pasaportNo.KeyPress += pasaportNo_KeyPress;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Font = new Font("Segoe UI", 12F);
+            label18.Location = new Point(6, 73);
+            label18.Name = "label18";
+            label18.Size = new Size(124, 28);
+            label18.TabIndex = 37;
+            label18.Text = "Pasaport No.";
+            // 
             // dogum
             // 
-            dogum.Location = new Point(143, 333);
+            dogum.Location = new Point(143, 361);
             dogum.Name = "dogum";
             dogum.Size = new Size(272, 27);
             dogum.TabIndex = 36;
             // 
             // telefon
             // 
-            telefon.Location = new Point(143, 291);
+            telefon.Location = new Point(143, 320);
             telefon.Mask = "0(999) 000-0000";
             telefon.Name = "telefon";
             telefon.Size = new Size(137, 27);
@@ -317,7 +403,7 @@
             // kadinRadioButton
             // 
             kadinRadioButton.AutoSize = true;
-            kadinRadioButton.Location = new Point(187, 208);
+            kadinRadioButton.Location = new Point(188, 241);
             kadinRadioButton.Name = "kadinRadioButton";
             kadinRadioButton.Size = new Size(39, 24);
             kadinRadioButton.TabIndex = 31;
@@ -329,7 +415,7 @@
             // erkekRadioButton
             // 
             erkekRadioButton.AutoSize = true;
-            erkekRadioButton.Location = new Point(143, 208);
+            erkekRadioButton.Location = new Point(144, 241);
             erkekRadioButton.Name = "erkekRadioButton";
             erkekRadioButton.Size = new Size(38, 24);
             erkekRadioButton.TabIndex = 30;
@@ -340,14 +426,14 @@
             // 
             // mail
             // 
-            mail.Location = new Point(143, 380);
+            mail.Location = new Point(143, 405);
             mail.Name = "mail";
             mail.Size = new Size(137, 27);
             mail.TabIndex = 29;
             // 
             // yas
             // 
-            yas.Location = new Point(143, 251);
+            yas.Location = new Point(143, 279);
             yas.MaxLength = 4;
             yas.Name = "yas";
             yas.Size = new Size(137, 27);
@@ -356,14 +442,14 @@
             // 
             // uyruk
             // 
-            uyruk.Location = new Point(143, 165);
+            uyruk.Location = new Point(143, 197);
             uyruk.Name = "uyruk";
             uyruk.Size = new Size(137, 27);
             uyruk.TabIndex = 25;
             // 
             // Soyad
             // 
-            Soyad.Location = new Point(143, 122);
+            Soyad.Location = new Point(143, 159);
             Soyad.Name = "Soyad";
             Soyad.Size = new Size(137, 27);
             Soyad.TabIndex = 24;
@@ -371,14 +457,14 @@
             // 
             // Ad
             // 
-            Ad.Location = new Point(143, 81);
+            Ad.Location = new Point(143, 115);
             Ad.Name = "Ad";
             Ad.Size = new Size(137, 27);
             Ad.TabIndex = 23;
             // 
             // tcNo
             // 
-            tcNo.Location = new Point(143, 36);
+            tcNo.Location = new Point(143, 33);
             tcNo.MaxLength = 11;
             tcNo.Name = "tcNo";
             tcNo.Size = new Size(137, 27);
@@ -390,7 +476,7 @@
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI", 12F);
-            label15.Location = new Point(8, 376);
+            label15.Location = new Point(8, 401);
             label15.Name = "label15";
             label15.Size = new Size(77, 28);
             label15.TabIndex = 21;
@@ -400,7 +486,7 @@
             // 
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 12F);
-            label14.Location = new Point(8, 333);
+            label14.Location = new Point(8, 360);
             label14.Name = "label14";
             label14.Size = new Size(129, 28);
             label14.TabIndex = 20;
@@ -410,7 +496,7 @@
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI", 12F);
-            label13.Location = new Point(8, 290);
+            label13.Location = new Point(8, 319);
             label13.Name = "label13";
             label13.Size = new Size(110, 28);
             label13.TabIndex = 19;
@@ -420,7 +506,7 @@
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 12F);
-            label12.Location = new Point(8, 247);
+            label12.Location = new Point(8, 278);
             label12.Name = "label12";
             label12.Size = new Size(39, 28);
             label12.TabIndex = 18;
@@ -430,7 +516,7 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 12F);
-            label11.Location = new Point(8, 204);
+            label11.Location = new Point(8, 237);
             label11.Name = "label11";
             label11.Size = new Size(80, 28);
             label11.TabIndex = 17;
@@ -440,7 +526,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 12F);
-            label10.Location = new Point(8, 161);
+            label10.Location = new Point(8, 196);
             label10.Name = "label10";
             label10.Size = new Size(64, 28);
             label10.TabIndex = 16;
@@ -450,7 +536,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 12F);
-            label9.Location = new Point(6, 118);
+            label9.Location = new Point(6, 155);
             label9.Name = "label9";
             label9.Size = new Size(67, 28);
             label9.TabIndex = 15;
@@ -460,7 +546,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 12F);
-            label8.Location = new Point(6, 75);
+            label8.Location = new Point(6, 114);
             label8.Name = "label8";
             label8.Size = new Size(37, 28);
             label8.TabIndex = 14;
@@ -481,12 +567,22 @@
             sqlCommand1.CommandTimeout = 30;
             sqlCommand1.EnableOptimizedParameterBinding = false;
             // 
+            // MusteriKayitlari
+            // 
+            MusteriKayitlari.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            MusteriKayitlari.Location = new Point(1150, 22);
+            MusteriKayitlari.Name = "MusteriKayitlari";
+            MusteriKayitlari.RowHeadersWidth = 51;
+            MusteriKayitlari.Size = new Size(532, 434);
+            MusteriKayitlari.TabIndex = 11;
+            // 
             // Form5
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1694, 705);
+            Controls.Add(MusteriKayitlari);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(kaydet);
@@ -497,6 +593,7 @@
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)MusteriKayitlari).EndInit();
             ResumeLayout(false);
         }
 
@@ -543,5 +640,13 @@
         private DateTimePicker girisTarih;
         private DateTimePicker dogum;
         private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
+        private TextBox pasaportNo;
+        private Label label18;
+        private TextBox pasaport;
+        private Label label19;
+        private DataGridView MusteriKayitlari;
+        private TextBox textBox2;
+        private TextBox FiyatToplam;
+        private Label label20;
     }
 }
