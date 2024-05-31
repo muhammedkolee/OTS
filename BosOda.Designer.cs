@@ -1,6 +1,6 @@
 ﻿namespace Otel_Takip_Sistemi
 {
-    partial class Form5
+    partial class BosOda
     {
         /// <summary>
         /// Required designer variable.

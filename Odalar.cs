@@ -91,7 +91,7 @@ namespace Otel_Takip_Sistemi
             {
                 if ((sender as Button).BackColor == Color.Red)
                 {
-                    Form5 form5 = new Form5();
+                    BosOda form5 = new BosOda();
                     form5.Show();
                 }
                 else

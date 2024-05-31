@@ -15,7 +15,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Otel_Takip_Sistemi
 {
-    public partial class Form5 : Form
+    public partial class BosOda : Form
     {
         //Formda kullanılan değişkenler ve SQL bağlantı komutları.
         int cinsiyet;
@@ -25,7 +25,7 @@ namespace Otel_Takip_Sistemi
         DataSet ds = new DataSet();
         string sorguFiyat = "select Fiyat from Odalar where Oda_No = '" + Odalar.oda + "'";
 
-        public Form5()
+        public BosOda()
         {
             InitializeComponent();
             baglanti = new SqlConnection(conString);
