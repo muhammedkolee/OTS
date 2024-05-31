@@ -63,6 +63,7 @@ namespace Otel_Takip_Sistemi
             ToplamFiyat();
         }
 
+        //dayım
         public void VeriGetir()
         {
             SqlCommand komutGrup = new SqlCommand(sorguGrup, baglanti);
