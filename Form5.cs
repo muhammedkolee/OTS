@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.ComponentModel.Design.ObjectSelectorEditor;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Otel_Takip_Sistemi
 {
@@ -20,6 +21,8 @@ namespace Otel_Takip_Sistemi
         int cinsiyet;
         public string conString = "Data Source=MUHAMMED\\SQLEXPRESS;Initial Catalog=Giris;Integrated Security=True;Trust Server Certificate=True";
         SqlConnection baglanti;
+        SqlDataAdapter dad = new SqlDataAdapter();
+        DataSet ds = new DataSet();
         string sorguFiyat = "select Fiyat from Odalar where Oda_No = '" + Odalar.oda + "'";
 
         public Form5()
@@ -34,6 +37,7 @@ namespace Otel_Takip_Sistemi
         {
             baglanti.Open();
             odaNo.Text = Odalar.oda;
+            KayitlariGetir();
 
             using (SqlCommand komutfiyat = new SqlCommand(sorguFiyat, baglanti))
             {
@@ -42,13 +46,23 @@ namespace Otel_Takip_Sistemi
             ToplamFiyat();
         }
 
+        public void KayitlariGetir()
+        {
+            ds.Clear();
+
+            dad = new SqlDataAdapter("Select * from Misafir", baglanti);
+            dad.Fill(ds);
+            MusteriKayitlari.DataSource = ds.Tables[0];
+        }
+
 
         //Kaydet butonuna basıldığında çalışacak fonksiyonlar ve komutlar dizisi.
         private void kaydet_Click(object sender, EventArgs e)
         {
             if (VeriKayitliMi(tcNo.Text))
             {
-                MessageBox.Show("Veri Zaten Kayıtlı. Tekrar Deneyin!", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                RezervasyonKaydet();
+                this.Hide();
             }
 
             else
@@ -84,13 +98,7 @@ namespace Otel_Takip_Sistemi
         //TC kimlik numarasına göre müşteri kaydetmek için gerekli olan SQL komutları.
         public void MusteriKaydetTc()
         {
-            SqlCommand komutRezervasyon = new SqlCommand("insert into Rezervasyon(OdaNo, Grup, MusteriTc, GirisTarih, CikisTarih) values(@odaNo, @Grup, @Tc, @Giris, @Cikis)", baglanti);
-            komutRezervasyon.Parameters.AddWithValue("@odaNo", odaNo.Text);
-            komutRezervasyon.Parameters.AddWithValue("@Grup", grup.Text);
-            komutRezervasyon.Parameters.AddWithValue("@Tc", musteriTc.Text);
-            komutRezervasyon.Parameters.AddWithValue("@Giris", girisTarih.Value);
-            komutRezervasyon.Parameters.AddWithValue("@Cikis", cikisTarih.Value);
-            komutRezervasyon.ExecuteNonQuery();
+
 
             SqlCommand komutMusteri = new SqlCommand("insert into Misafir(TcNo, Ad, Soyad, Uyruk, Cinsiyet, Yaş, Telefon, DogumTarih, Mail) values(@Tc, @Ad, @Soyad, @Uyruk, @Cinsiyet, @Yas, @Telefon, @Dogum, @Mail)", baglanti);
             komutMusteri.Parameters.AddWithValue("@Tc", tcNo.Text);
@@ -109,13 +117,7 @@ namespace Otel_Takip_Sistemi
         //Pasaport numarasına göre müşteri kaydetmek için gerekli SQL komutları.
         public void MusteriKaydetPs()
         {
-            SqlCommand komutRezervasyon = new SqlCommand("insert into Rezervasyon(OdaNo, Grup, MusteriPasaportNo, GirisTarih, CikisTarih) values(@odaNo, @Grup, @Pasaport, @Giris, @Cikis)", baglanti);
-            komutRezervasyon.Parameters.AddWithValue("@odaNo", odaNo.Text);
-            komutRezervasyon.Parameters.AddWithValue("@Grup", grup.Text);
-            komutRezervasyon.Parameters.AddWithValue("@Pasaport", pasaportNo.Text);
-            komutRezervasyon.Parameters.AddWithValue("@Giris", girisTarih.Value);
-            komutRezervasyon.Parameters.AddWithValue("@Cikis", cikisTarih.Value);
-            komutRezervasyon.ExecuteNonQuery();
+
 
             SqlCommand komutMusteri = new SqlCommand("insert into Misafir(PasaportNo, Ad, Soyad, Uyruk, Cinsiyet, Yaş, Telefon, DogumTarih, Mail) values(@Pasaport, @Ad, @Soyad, @Uyruk, @Cinsiyet, @Yas, @Telefon, @Dogum, @Mail)", baglanti);
             komutMusteri.Parameters.AddWithValue("@Pasaport", pasaportNo.Text);
@@ -146,6 +148,27 @@ namespace Otel_Takip_Sistemi
                 komutOdalar.Parameters.AddWithValue("@Giris", girisTarih.Value);
                 komutOdalar.Parameters.AddWithValue("@Cikis", cikisTarih.Value);
                 komutOdalar.ExecuteNonQuery();
+
+                if (pasaportNo.Text == string.Empty)
+                {
+                    SqlCommand komutRezervasyon = new SqlCommand("insert into Rezervasyon(OdaNo, Grup, MusteriTc, GirisTarih, CikisTarih) values(@odaNo, @Grup, @Tc, @Giris, @Cikis)", baglanti);
+                    komutRezervasyon.Parameters.AddWithValue("@odaNo", odaNo.Text);
+                    komutRezervasyon.Parameters.AddWithValue("@Grup", grup.Text);
+                    komutRezervasyon.Parameters.AddWithValue("@Tc", musteriTc.Text);
+                    komutRezervasyon.Parameters.AddWithValue("@Giris", girisTarih.Value);
+                    komutRezervasyon.Parameters.AddWithValue("@Cikis", cikisTarih.Value);
+                    komutRezervasyon.ExecuteNonQuery();
+                }
+                else
+                {
+                    SqlCommand komutRezervasyon = new SqlCommand("insert into Rezervasyon(OdaNo, Grup, MusteriPasaportNo, GirisTarih, CikisTarih) values(@odaNo, @Grup, @Pasaport, @Giris, @Cikis)", baglanti);
+                    komutRezervasyon.Parameters.AddWithValue("@odaNo", odaNo.Text);
+                    komutRezervasyon.Parameters.AddWithValue("@Grup", grup.Text);
+                    komutRezervasyon.Parameters.AddWithValue("@Pasaport", pasaportNo.Text);
+                    komutRezervasyon.Parameters.AddWithValue("@Giris", girisTarih.Value);
+                    komutRezervasyon.Parameters.AddWithValue("@Cikis", cikisTarih.Value);
+                    komutRezervasyon.ExecuteNonQuery();
+                }
 
                 MessageBox.Show("Başarıyla Kaydedildi", "Kayıt", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -231,6 +254,42 @@ namespace Otel_Takip_Sistemi
         private void cikisTarih_ValueChanged(object sender, EventArgs e)
         {
             ToplamFiyat();
+        }
+
+        private void MusteriKayitlari_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {               
+                DataGridViewRow satir = MusteriKayitlari.Rows[e.RowIndex];
+                if (satir.Cells["TcNo"].Value == DBNull.Value)
+                {
+                    pasaportNo.Text = satir.Cells["PasaportNo"].Value.ToString();
+                    tcNo.Text = string.Empty;
+                    tcNo.ReadOnly = true;
+                }
+                else
+                {
+                    tcNo.Text = satir.Cells["TcNo"].Value.ToString();
+                    pasaportNo.Text = string.Empty;
+                    pasaportNo.ReadOnly = true;
+                }
+
+                Ad.Text = satir.Cells["Ad"].Value.ToString();
+                Soyad.Text = satir.Cells["Soyad"].Value.ToString();
+                uyruk.Text = satir.Cells["Uyruk"].Value.ToString();
+                yas.Text = satir.Cells["Yaş"].Value.ToString();
+                telefon.Text = satir.Cells["Telefon"].Value.ToString();
+                mail.Text = satir.Cells["Mail"].Value.ToString();
+
+                if (Convert.ToInt32(satir.Cells["Cinsiyet"].Value) == 0)
+                {
+                    erkekRadioButton.Select();
+                }
+                else
+                {
+                    kadinRadioButton.Select();
+                }
+            }
         }
     }
 }

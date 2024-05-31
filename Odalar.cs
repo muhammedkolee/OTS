@@ -36,6 +36,7 @@ namespace Otel_Takip_Sistemi
         //Form yüklenirken çalışacak fonksiyonlar.
         private void Form4_Load(object sender, EventArgs e)
         {
+            baglanti.Open();
             OdaBilgi();
             Renk();
         }
@@ -43,7 +44,6 @@ namespace Otel_Takip_Sistemi
         //Odalar hakkında kullanıcıya bilgi sağlamak için yapılmış fonksiyon.
         public void OdaBilgi()
         {
-            baglanti.Open();
             using (SqlCommand komutToplamOda = new SqlCommand(sorguToplamOda, baglanti))
             {
                 toplamOda.Text = Convert.ToString(komutToplamOda.ExecuteScalar());
@@ -75,22 +75,38 @@ namespace Otel_Takip_Sistemi
                 toplam += Convert.ToInt32(Convert.ToString(komutKisiSayisi2.ExecuteScalar()));
                 toplamKisi.Text = Convert.ToString(toplam);
             }
-            baglanti.Close();
         }
 
         //Butonların hangisine tıklandığını kaydeden ve bu veriyi farklı bir formda kullanılmak üzere taşıyan kod dizisi.
         public void Button_Click(object sender, EventArgs e)
         {
             oda = (sender as Button).Text.Substring(4);
-            Form5 form5 = new Form5();
-            form5.Show();
+            if ((sender as Button).BackColor == Color.Black)
+            {
+                SqlCommand temizle = new SqlCommand("update Odalar set Durum = 0 where Oda_No = " + oda, baglanti);
+                temizle.ExecuteNonQuery();
+                MessageBox.Show("Oda temizlendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if ((sender as Button).BackColor == Color.Red)
+                {
+                    Form5 form5 = new Form5();
+                    form5.Show();
+                }
+                else
+                {
+                    DoluOda doluoda = new DoluOda();
+                    doluoda.Show();
+                }
+            }
         }
 
         //Boş olan odalar için buton rengini kırmızı; dolu olan odalar için yeşil renk yapan fonksiyon.
         int renkDurum;
+        int renkDurum2;
         public void Renk()
         {
-            baglanti.Open();
             for (int i = 101; i < 411; i++)
             {
                 if (i == 111 || i == 211 || i == 311)
@@ -103,22 +119,32 @@ namespace Otel_Takip_Sistemi
                 komutRenk.Parameters.AddWithValue("@odano", i);
                 renkDurum = Convert.ToInt32(komutRenk.ExecuteScalar());
 
-                if (renkDurum == 0)
+                SqlCommand komutRenk2 = new SqlCommand("select Durum from Odalar where Oda_No = @odanu", baglanti);
+                komutRenk2.Parameters.AddWithValue("@odanu", i);
+                renkDurum2 = Convert.ToInt32(komutRenk2.ExecuteScalar());
+
+                if (renkDurum == 0 && renkDurum2 == 0)
                 {
                     buton.BackColor = Color.Red;
                 }
-                else
+                else if (renkDurum == 0 && renkDurum2 == 1)
+                {
+                    buton.BackColor = Color.Black;
+                }
+                else if (renkDurum == 1)
                 {
                     buton.BackColor = Color.Green;
                 }
+
+
             }
-            baglanti.Close();
         }
 
         //Farklı bir formdayken yapılan değişiklikler anlık yansıtılamadığı için işbu forma yenilemek ve renkleri tekrarlamak için kullanılan buton.
         private void Yenile_Click(object sender, EventArgs e)
         {
             Renk();
+            OdaBilgi();
         }
     }
 }

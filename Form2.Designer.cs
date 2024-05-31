@@ -71,10 +71,11 @@
             // number
             // 
             number.Location = new Point(129, 135);
-            number.Mask = "(999) 000-0000";
+            number.Mask = "0(999) 000-0000";
             number.Name = "number";
             number.Size = new Size(232, 27);
             number.TabIndex = 13;
+            number.Text = "0";
             // 
             // save
             // 

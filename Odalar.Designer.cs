@@ -70,6 +70,7 @@
             oda102 = new Button();
             oda101 = new Button();
             groupBox2 = new GroupBox();
+            Yenile = new Button();
             kirliBosOda = new TextBox();
             textBox7 = new TextBox();
             textBox1 = new TextBox();
@@ -80,7 +81,6 @@
             textBox4 = new TextBox();
             doluOda = new TextBox();
             toplamKisi = new TextBox();
-            Yenile = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -138,6 +138,7 @@
             // oda410
             // 
             oda410.AutoSize = true;
+            oda410.Cursor = Cursors.Hand;
             oda410.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda410.ForeColor = Color.White;
             oda410.Location = new Point(1244, 399);
@@ -151,6 +152,7 @@
             // oda409
             // 
             oda409.AutoSize = true;
+            oda409.Cursor = Cursors.Hand;
             oda409.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda409.ForeColor = Color.White;
             oda409.Location = new Point(1108, 399);
@@ -164,6 +166,7 @@
             // oda408
             // 
             oda408.AutoSize = true;
+            oda408.Cursor = Cursors.Hand;
             oda408.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda408.ForeColor = Color.White;
             oda408.Location = new Point(972, 399);
@@ -177,6 +180,7 @@
             // oda407
             // 
             oda407.AutoSize = true;
+            oda407.Cursor = Cursors.Hand;
             oda407.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda407.ForeColor = Color.White;
             oda407.Location = new Point(836, 399);
@@ -190,6 +194,7 @@
             // oda406
             // 
             oda406.AutoSize = true;
+            oda406.Cursor = Cursors.Hand;
             oda406.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda406.ForeColor = Color.White;
             oda406.Location = new Point(700, 399);
@@ -203,6 +208,7 @@
             // oda405
             // 
             oda405.AutoSize = true;
+            oda405.Cursor = Cursors.Hand;
             oda405.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda405.ForeColor = Color.White;
             oda405.Location = new Point(564, 399);
@@ -216,6 +222,7 @@
             // oda404
             // 
             oda404.AutoSize = true;
+            oda404.Cursor = Cursors.Hand;
             oda404.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda404.ForeColor = Color.White;
             oda404.Location = new Point(428, 399);
@@ -229,6 +236,7 @@
             // oda403
             // 
             oda403.AutoSize = true;
+            oda403.Cursor = Cursors.Hand;
             oda403.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda403.ForeColor = Color.White;
             oda403.Location = new Point(292, 399);
@@ -242,6 +250,7 @@
             // oda402
             // 
             oda402.AutoSize = true;
+            oda402.Cursor = Cursors.Hand;
             oda402.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda402.ForeColor = Color.White;
             oda402.Location = new Point(156, 399);
@@ -255,6 +264,7 @@
             // oda401
             // 
             oda401.AutoSize = true;
+            oda401.Cursor = Cursors.Hand;
             oda401.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda401.ForeColor = Color.White;
             oda401.Location = new Point(20, 399);
@@ -268,6 +278,7 @@
             // oda310
             // 
             oda310.AutoSize = true;
+            oda310.Cursor = Cursors.Hand;
             oda310.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda310.ForeColor = Color.White;
             oda310.Location = new Point(1244, 279);
@@ -281,6 +292,7 @@
             // oda309
             // 
             oda309.AutoSize = true;
+            oda309.Cursor = Cursors.Hand;
             oda309.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda309.ForeColor = Color.White;
             oda309.Location = new Point(1108, 279);
@@ -294,6 +306,7 @@
             // oda308
             // 
             oda308.AutoSize = true;
+            oda308.Cursor = Cursors.Hand;
             oda308.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda308.ForeColor = Color.White;
             oda308.Location = new Point(972, 279);
@@ -307,6 +320,7 @@
             // oda307
             // 
             oda307.AutoSize = true;
+            oda307.Cursor = Cursors.Hand;
             oda307.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda307.ForeColor = Color.White;
             oda307.Location = new Point(836, 279);
@@ -320,6 +334,7 @@
             // oda306
             // 
             oda306.AutoSize = true;
+            oda306.Cursor = Cursors.Hand;
             oda306.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda306.ForeColor = Color.White;
             oda306.Location = new Point(700, 279);
@@ -333,6 +348,7 @@
             // oda305
             // 
             oda305.AutoSize = true;
+            oda305.Cursor = Cursors.Hand;
             oda305.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda305.ForeColor = Color.White;
             oda305.Location = new Point(564, 279);
@@ -346,6 +362,7 @@
             // oda304
             // 
             oda304.AutoSize = true;
+            oda304.Cursor = Cursors.Hand;
             oda304.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda304.ForeColor = Color.White;
             oda304.Location = new Point(428, 279);
@@ -359,6 +376,7 @@
             // oda303
             // 
             oda303.AutoSize = true;
+            oda303.Cursor = Cursors.Hand;
             oda303.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda303.ForeColor = Color.White;
             oda303.Location = new Point(292, 279);
@@ -372,6 +390,7 @@
             // oda302
             // 
             oda302.AutoSize = true;
+            oda302.Cursor = Cursors.Hand;
             oda302.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda302.ForeColor = Color.White;
             oda302.Location = new Point(156, 279);
@@ -385,6 +404,7 @@
             // oda301
             // 
             oda301.AutoSize = true;
+            oda301.Cursor = Cursors.Hand;
             oda301.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda301.ForeColor = Color.White;
             oda301.Location = new Point(20, 279);
@@ -398,6 +418,7 @@
             // oda210
             // 
             oda210.AutoSize = true;
+            oda210.Cursor = Cursors.Hand;
             oda210.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda210.ForeColor = Color.White;
             oda210.Location = new Point(1244, 159);
@@ -411,6 +432,7 @@
             // oda209
             // 
             oda209.AutoSize = true;
+            oda209.Cursor = Cursors.Hand;
             oda209.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda209.ForeColor = Color.White;
             oda209.Location = new Point(1108, 159);
@@ -424,6 +446,7 @@
             // oda208
             // 
             oda208.AutoSize = true;
+            oda208.Cursor = Cursors.Hand;
             oda208.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda208.ForeColor = Color.White;
             oda208.Location = new Point(972, 159);
@@ -437,6 +460,7 @@
             // oda207
             // 
             oda207.AutoSize = true;
+            oda207.Cursor = Cursors.Hand;
             oda207.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda207.ForeColor = Color.White;
             oda207.Location = new Point(836, 159);
@@ -450,6 +474,7 @@
             // oda206
             // 
             oda206.AutoSize = true;
+            oda206.Cursor = Cursors.Hand;
             oda206.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda206.ForeColor = Color.White;
             oda206.Location = new Point(700, 159);
@@ -463,6 +488,7 @@
             // oda205
             // 
             oda205.AutoSize = true;
+            oda205.Cursor = Cursors.Hand;
             oda205.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda205.ForeColor = Color.White;
             oda205.Location = new Point(564, 159);
@@ -476,6 +502,7 @@
             // oda204
             // 
             oda204.AutoSize = true;
+            oda204.Cursor = Cursors.Hand;
             oda204.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda204.ForeColor = Color.White;
             oda204.Location = new Point(428, 159);
@@ -489,6 +516,7 @@
             // oda203
             // 
             oda203.AutoSize = true;
+            oda203.Cursor = Cursors.Hand;
             oda203.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda203.ForeColor = Color.White;
             oda203.Location = new Point(292, 159);
@@ -502,6 +530,7 @@
             // oda202
             // 
             oda202.AutoSize = true;
+            oda202.Cursor = Cursors.Hand;
             oda202.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda202.ForeColor = Color.White;
             oda202.Location = new Point(156, 159);
@@ -515,6 +544,7 @@
             // oda201
             // 
             oda201.AutoSize = true;
+            oda201.Cursor = Cursors.Hand;
             oda201.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda201.ForeColor = Color.White;
             oda201.Location = new Point(20, 159);
@@ -528,6 +558,7 @@
             // oda110
             // 
             oda110.AutoSize = true;
+            oda110.Cursor = Cursors.Hand;
             oda110.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda110.ForeColor = Color.White;
             oda110.Location = new Point(1244, 39);
@@ -541,6 +572,7 @@
             // oda109
             // 
             oda109.AutoSize = true;
+            oda109.Cursor = Cursors.Hand;
             oda109.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda109.ForeColor = Color.White;
             oda109.Location = new Point(1108, 39);
@@ -554,6 +586,7 @@
             // oda108
             // 
             oda108.AutoSize = true;
+            oda108.Cursor = Cursors.Hand;
             oda108.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda108.ForeColor = Color.White;
             oda108.Location = new Point(972, 39);
@@ -567,6 +600,7 @@
             // oda107
             // 
             oda107.AutoSize = true;
+            oda107.Cursor = Cursors.Hand;
             oda107.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda107.ForeColor = Color.White;
             oda107.Location = new Point(836, 39);
@@ -580,6 +614,7 @@
             // oda106
             // 
             oda106.AutoSize = true;
+            oda106.Cursor = Cursors.Hand;
             oda106.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda106.ForeColor = Color.White;
             oda106.Location = new Point(700, 39);
@@ -593,6 +628,7 @@
             // oda105
             // 
             oda105.AutoSize = true;
+            oda105.Cursor = Cursors.Hand;
             oda105.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda105.ForeColor = Color.White;
             oda105.Location = new Point(564, 39);
@@ -606,6 +642,7 @@
             // oda104
             // 
             oda104.AutoSize = true;
+            oda104.Cursor = Cursors.Hand;
             oda104.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda104.ForeColor = Color.White;
             oda104.Location = new Point(428, 39);
@@ -619,6 +656,7 @@
             // oda103
             // 
             oda103.AutoSize = true;
+            oda103.Cursor = Cursors.Hand;
             oda103.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda103.ForeColor = Color.White;
             oda103.Location = new Point(292, 39);
@@ -632,6 +670,7 @@
             // oda102
             // 
             oda102.AutoSize = true;
+            oda102.Cursor = Cursors.Hand;
             oda102.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda102.ForeColor = Color.White;
             oda102.Location = new Point(156, 39);
@@ -645,6 +684,7 @@
             // oda101
             // 
             oda101.AutoSize = true;
+            oda101.Cursor = Cursors.Hand;
             oda101.Font = new Font("Arial Black", 13.2000008F, FontStyle.Bold);
             oda101.ForeColor = Color.White;
             oda101.Location = new Point(20, 39);
@@ -675,6 +715,17 @@
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Oda Bilgi";
+            // 
+            // Yenile
+            // 
+            Yenile.Cursor = Cursors.Hand;
+            Yenile.Location = new Point(132, 431);
+            Yenile.Name = "Yenile";
+            Yenile.Size = new Size(129, 82);
+            Yenile.TabIndex = 25;
+            Yenile.Text = "Yenile";
+            Yenile.UseVisualStyleBackColor = true;
+            Yenile.Click += Yenile_Click;
             // 
             // kirliBosOda
             // 
@@ -780,16 +831,6 @@
             toplamKisi.ReadOnly = true;
             toplamKisi.Size = new Size(34, 34);
             toplamKisi.TabIndex = 17;
-            // 
-            // Yenile
-            // 
-            Yenile.Location = new Point(132, 431);
-            Yenile.Name = "Yenile";
-            Yenile.Size = new Size(129, 82);
-            Yenile.TabIndex = 25;
-            Yenile.Text = "Yenile";
-            Yenile.UseVisualStyleBackColor = true;
-            Yenile.Click += Yenile_Click;
             // 
             // Odalar
             // 

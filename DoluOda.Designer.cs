@@ -1,6 +1,6 @@
 ﻿namespace Otel_Takip_Sistemi
 {
-    partial class Form5
+    partial class DoluOda
     {
         /// <summary>
         /// Required designer variable.
@@ -51,7 +51,6 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            kaydet = new Button();
             groupBox2 = new GroupBox();
             pasaportNo = new TextBox();
             label18 = new Label();
@@ -74,12 +73,10 @@
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
-            helpProvider1 = new HelpProvider();
-            sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
-            MusteriKayitlari = new DataGridView();
+            delete = new Button();
+            save = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)MusteriKayitlari).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
@@ -108,8 +105,8 @@
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(690, 444);
-            groupBox1.TabIndex = 0;
+            groupBox1.Size = new Size(690, 451);
+            groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = " ";
             // 
@@ -165,8 +162,7 @@
             cikisTarih.Name = "cikisTarih";
             cikisTarih.Size = new Size(125, 27);
             cikisTarih.TabIndex = 36;
-            cikisTarih.Value = new DateTime(2024, 5, 30, 0, 0, 0, 0);
-            cikisTarih.ValueChanged += cikisTarih_ValueChanged;
+            cikisTarih.Value = new DateTime(2024, 5, 30, 20, 31, 53, 0);
             // 
             // girisTarih
             // 
@@ -175,17 +171,16 @@
             girisTarih.ImeMode = ImeMode.NoControl;
             girisTarih.Location = new Point(177, 198);
             girisTarih.Name = "girisTarih";
-            helpProvider1.SetShowHelp(girisTarih, false);
             girisTarih.Size = new Size(125, 27);
             girisTarih.TabIndex = 35;
-            girisTarih.Value = new DateTime(2024, 5, 29, 15, 1, 43, 0);
-            girisTarih.ValueChanged += cikisTarih_ValueChanged;
+            girisTarih.Value = new DateTime(2024, 5, 30, 20, 32, 7, 0);
             // 
             // CocukSayi
             // 
             CocukSayi.FormattingEnabled = true;
             CocukSayi.Items.AddRange(new object[] { "0", "1", "2", "3", "4", "5", "6" });
             CocukSayi.Location = new Point(486, 81);
+            CocukSayi.MaxLength = 1;
             CocukSayi.Name = "CocukSayi";
             CocukSayi.Size = new Size(57, 28);
             CocukSayi.TabIndex = 16;
@@ -206,6 +201,7 @@
             yetiskinSayi.FormattingEnabled = true;
             yetiskinSayi.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6" });
             yetiskinSayi.Location = new Point(486, 36);
+            yetiskinSayi.MaxLength = 1;
             yetiskinSayi.Name = "yetiskinSayi";
             yetiskinSayi.Size = new Size(57, 28);
             yetiskinSayi.TabIndex = 14;
@@ -238,7 +234,6 @@
             comboBox1.Items.AddRange(new object[] { "$", "€", "₺" });
             comboBox1.Location = new Point(308, 281);
             comboBox1.Name = "comboBox1";
-            helpProvider1.SetShowHelp(comboBox1, false);
             comboBox1.Size = new Size(45, 28);
             comboBox1.TabIndex = 2;
             comboBox1.Tag = "";
@@ -326,16 +321,6 @@
             label1.TabIndex = 0;
             label1.Text = "Oda No.";
             // 
-            // kaydet
-            // 
-            kaydet.Location = new Point(1019, 462);
-            kaydet.Name = "kaydet";
-            kaydet.Size = new Size(116, 55);
-            kaydet.TabIndex = 10;
-            kaydet.Text = "Kaydet";
-            kaydet.UseVisualStyleBackColor = true;
-            kaydet.Click += kaydet_Click;
-            // 
             // groupBox2
             // 
             groupBox2.Controls.Add(pasaportNo);
@@ -361,8 +346,8 @@
             groupBox2.Controls.Add(label7);
             groupBox2.Location = new Point(708, 12);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(427, 444);
-            groupBox2.TabIndex = 1;
+            groupBox2.Size = new Size(330, 451);
+            groupBox2.TabIndex = 2;
             groupBox2.TabStop = false;
             groupBox2.Text = "Müşteri Bilgileri";
             // 
@@ -374,7 +359,6 @@
             pasaportNo.Size = new Size(137, 27);
             pasaportNo.TabIndex = 38;
             pasaportNo.TextChanged += pasaportNo_TextChanged;
-            pasaportNo.KeyPress += pasaportNo_KeyPress;
             // 
             // label18
             // 
@@ -413,7 +397,6 @@
             kadinRadioButton.TabStop = true;
             kadinRadioButton.Text = "K";
             kadinRadioButton.UseVisualStyleBackColor = true;
-            kadinRadioButton.CheckedChanged += kadinRadioButton_CheckedChanged;
             // 
             // erkekRadioButton
             // 
@@ -425,7 +408,6 @@
             erkekRadioButton.TabStop = true;
             erkekRadioButton.Text = "E";
             erkekRadioButton.UseVisualStyleBackColor = true;
-            erkekRadioButton.CheckedChanged += radioButton1_CheckedChanged;
             // 
             // mail
             // 
@@ -441,7 +423,6 @@
             yas.Name = "yas";
             yas.Size = new Size(137, 27);
             yas.TabIndex = 27;
-            yas.KeyPress += yas_KeyPress;
             // 
             // uyruk
             // 
@@ -456,7 +437,6 @@
             Soyad.Name = "Soyad";
             Soyad.Size = new Size(137, 27);
             Soyad.TabIndex = 24;
-            Soyad.TextChanged += Soyad_TextChanged;
             // 
             // Ad
             // 
@@ -473,7 +453,6 @@
             tcNo.Size = new Size(137, 27);
             tcNo.TabIndex = 22;
             tcNo.TextChanged += tcNo_TextChanged;
-            tcNo.KeyPress += tcNo_KeyPress;
             // 
             // label15
             // 
@@ -565,59 +544,79 @@
             label7.TabIndex = 13;
             label7.Text = "Tc No.";
             // 
-            // sqlCommand1
+            // delete
             // 
-            sqlCommand1.CommandTimeout = 30;
-            sqlCommand1.EnableOptimizedParameterBinding = false;
+            delete.Location = new Point(924, 469);
+            delete.Name = "delete";
+            delete.Size = new Size(114, 65);
+            delete.TabIndex = 3;
+            delete.Text = "Tümünü Sil";
+            delete.UseVisualStyleBackColor = true;
+            delete.Click += delete_Click;
             // 
-            // MusteriKayitlari
+            // save
             // 
-            MusteriKayitlari.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            MusteriKayitlari.Location = new Point(1150, 22);
-            MusteriKayitlari.Name = "MusteriKayitlari";
-            MusteriKayitlari.ReadOnly = true;
-            MusteriKayitlari.RowHeadersWidth = 51;
-            MusteriKayitlari.Size = new Size(532, 434);
-            MusteriKayitlari.TabIndex = 11;
-            MusteriKayitlari.CellClick += MusteriKayitlari_CellClick;
+            save.Location = new Point(804, 469);
+            save.Name = "save";
+            save.Size = new Size(114, 65);
+            save.TabIndex = 4;
+            save.Text = "Kaydet";
+            save.UseVisualStyleBackColor = true;
+            save.Click += save_Click;
             // 
-            // Form5
+            // DoluOda
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            ClientSize = new Size(1694, 705);
-            Controls.Add(MusteriKayitlari);
+            ClientSize = new Size(1049, 546);
+            Controls.Add(save);
+            Controls.Add(delete);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
-            Controls.Add(kaydet);
-            Name = "Form5";
-            Text = "Form5";
-            Load += Form5_Load;
+            Name = "DoluOda";
+            Text = "DoluOda";
+            Load += DoluOda_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)MusteriKayitlari).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private GroupBox groupBox1;
-        private Label label1;
+        private TextBox textBox2;
+        private TextBox FiyatToplam;
+        private Label label20;
+        private TextBox pasaport;
+        private Label label19;
+        private DateTimePicker cikisTarih;
+        private DateTimePicker girisTarih;
+        private ComboBox CocukSayi;
+        private Label label17;
+        private ComboBox yetiskinSayi;
+        private Label label16;
+        private Label label6;
+        private ComboBox comboBox1;
         private TextBox musteriTc;
         private TextBox fiyat;
-        private TextBox grup;
         private TextBox odaNo;
+        private TextBox grup;
         private Label label5;
         private Label label4;
         private Label label3;
         private Label label2;
-        private ComboBox comboBox1;
-        private Button kaydet;
-        private Label label6;
+        private Label label1;
         private GroupBox groupBox2;
+        private TextBox pasaportNo;
+        private Label label18;
+        private DateTimePicker dogum;
+        private MaskedTextBox telefon;
+        private RadioButton kadinRadioButton;
+        private RadioButton erkekRadioButton;
+        private TextBox mail;
+        private TextBox yas;
         private TextBox uyruk;
         private TextBox Soyad;
         private TextBox Ad;
@@ -631,27 +630,7 @@
         private Label label9;
         private Label label8;
         private Label label7;
-        private TextBox mail;
-        private TextBox yas;
-        private RadioButton kadinRadioButton;
-        private RadioButton erkekRadioButton;
-        private MaskedTextBox telefon;
-        private ComboBox CocukSayi;
-        private Label label17;
-        private ComboBox yetiskinSayi;
-        private Label label16;
-        private HelpProvider helpProvider1;
-        private DateTimePicker cikisTarih;
-        private DateTimePicker girisTarih;
-        private DateTimePicker dogum;
-        private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
-        private TextBox pasaportNo;
-        private Label label18;
-        private TextBox pasaport;
-        private Label label19;
-        private DataGridView MusteriKayitlari;
-        private TextBox textBox2;
-        private TextBox FiyatToplam;
-        private Label label20;
+        private Button delete;
+        private Button save;
     }
 }
