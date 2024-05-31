@@ -15,7 +15,7 @@ namespace Otel_Takip_Sistemi
     public partial class Kayit : Form
     {
         //SQL bağlantısında kullanılacak bağlantı dizisi.
-        public string conString = "Data Source=MUHAMMED\\SQLEXPRESS;Initial Catalog=Giris;Integrated Security=True;Trust Server Certificate=True";
+        public string conString = "Data Source=DESKTOP-8K93T2O\\SQLEXPRESS;Initial Catalog=Giris;Integrated Security=True;Trust Server Certificate=True";
         public Kayit()
         {
             InitializeComponent();

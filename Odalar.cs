@@ -16,7 +16,7 @@ namespace Otel_Takip_Sistemi
     public partial class Odalar : Form
     {
         //Formda kullanılacak değişkenler, SQL bağlantı dizeleri ve SQL sorgu komutları.
-        public string conString = "Data Source=MUHAMMED\\SQLEXPRESS;Initial Catalog=Giris;Integrated Security=True;Trust Server Certificate=True";
+        public string conString = "Data Source=DESKTOP-8K93T2O\\SQLEXPRESS;Initial Catalog=Giris;Integrated Security=True;Trust Server Certificate=True";
         public static string oda;
 
         string sorguToplamOda = "select count(*) from Odalar";

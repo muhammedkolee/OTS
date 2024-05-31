@@ -13,7 +13,7 @@ namespace Otel_Takip_Sistemi
 {
     public partial class DoluOda : Form
     {
-        string conString = "Data Source=MUHAMMED\\SQLEXPRESS;Initial Catalog=Giris;Integrated Security=True;Trust Server Certificate=True";
+        string conString = "Data Source=DESKTOP-8K93T2O\\SQLEXPRESS;Initial Catalog=Giris;Integrated Security=True;Trust Server Certificate=True";
         SqlConnection baglanti;
 
         string sorguTc = "select MusteriTc from Rezervasyon where OdaNo = " + Odalar.oda;

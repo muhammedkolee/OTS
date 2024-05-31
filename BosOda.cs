@@ -19,7 +19,7 @@ namespace Otel_Takip_Sistemi
     {
         //Formda kullanılan değişkenler ve SQL bağlantı komutları.
         int cinsiyet;
-        public string conString = "Data Source=MUHAMMED\\SQLEXPRESS;Initial Catalog=Giris;Integrated Security=True;Trust Server Certificate=True";
+        public string conString = "Data Source=DESKTOP-8K93T2O\\SQLEXPRESS;Initial Catalog=Giris;Integrated Security=True;Trust Server Certificate=True";
         SqlConnection baglanti;
         SqlDataAdapter dad = new SqlDataAdapter();
         DataSet ds = new DataSet();

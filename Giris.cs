@@ -6,10 +6,12 @@ namespace Otel_Takip_Sistemi
 {
     public partial class Giris : Form
     {
-        public string conString = "Data Source=MUHAMMED\\SQLEXPRESS;Initial Catalog=Giris;Integrated Security=True;Trust Server Certificate=True";
+        public string conString = "Data Source=DESKTOP-8K93T2O\\SQLEXPRESS;Initial Catalog=Giris;Integrated Security=True;Trust Server Certificate=True";
+        SqlConnection baglanti;
         public Giris()
         {
             InitializeComponent();
+             baglanti = new SqlConnection(conString);
         }
 
         //Butona týklandýðýnda kayýt olma formunu gösteren kod dizisi.
@@ -27,6 +29,7 @@ namespace Otel_Takip_Sistemi
             Odalar mainMenu = new Odalar();
             this.Hide();
             mainMenu.Show();
+
         }
 
         private void Giris_KeyDown(object sender, KeyEventArgs e)
